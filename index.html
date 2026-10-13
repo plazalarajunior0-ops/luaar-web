@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luaar · Ilumina</title>
+<meta name="description" content="Velas artesanales de cera vegetal, vertidas a mano en lotes pequeños. Llegan envueltas y con nota, listas para regalar. Pedidos por WhatsApp.">
+<meta property="og:title" content="Luaar · Ilumina">
+<meta property="og:description" content="Velas artesanales de cera vegetal, vertidas a mano en lotes pequeños. Llegan envueltas y con nota, listas para regalar. Pedidos por WhatsApp.">
+<meta property="og:image" content="https://plazalarajunior0-ops.github.io/luaar-web/img/01-hero-lata.jpg">
+<meta property="og:url" content="https://plazalarajunior0-ops.github.io/luaar-web/">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<link rel="icon" href="logo/luaar-destello-camel.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+<!-- loader-failsafe -->
+<script>setTimeout(function(){var l=document.getElementById("loader");if(l&&getComputedStyle(l).display!=="none"){l.style.transition="opacity .5s";l.style.opacity="0";setTimeout(function(){l.style.display="none";},520);}},1900);setTimeout(function(){document.querySelectorAll("#top,.hero__line .w,.hero__video,.hero__lead,.hero__cta").forEach(function(e){if(getComputedStyle(e).opacity==="0"){e.style.opacity="1";e.style.transform="none";}});},3500);</script>
+</head>
+<body>
+
+<!-- 2.0 PRELOADER -->
+<div id="loader" aria-hidden="true">
+  <img class="loader__star" src="logo/luaar-destello-camel.svg" alt="" width="28" height="28">
+  <img class="loader__mark" src="logo/luaar-horizontal-marfil.svg" alt="" width="120">
+</div>
+
+<!-- 2.1 HEADER -->
+<header id="top">
+  <a class="top__ig" href="https://instagram.com/luaar__ilumina" target="_blank" rel="noopener" aria-label="Instagram de Luaar">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5"/>
+      <circle cx="12" cy="12" r="4.2"/>
+      <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/>
+    </svg>
+  </a>
+  <a class="top__logo" href="#hero" aria-label="Luaar, inicio">
+    <img class="logo-marfil" src="logo/luaar-horizontal-marfil.svg" alt="Luaar" height="26">
+    <img class="logo-negro" src="logo/luaar-horizontal-negro.svg" alt="Luaar" height="26">
+  </a>
+  <button id="menuBtn" class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+    <span class="menu-btn__bars"><span></span><span></span></span>
+  </button>
+</header>
+
+<main>
+
+<!-- 2.2 HERO -->
+<section id="hero">
+  <div class="hero__inner">
+    <div class="hero__stage">
+      <h1 class="hero__title">
+        <span class="hero__line hero__line--1" data-words>Luz que</span>
+        <span class="hero__line hero__line--2" data-words>se regala.</span>
+      </h1>
+      <div class="hero__media" aria-hidden="true">
+        <video class="hero__video" src="video/hero-v.mp4" poster="img/hero-v.jpg" autoplay muted loop playsinline preload="auto"></video>
+      </div>
+    </div>
+    <p class="hero__lead" data-reveal>Velas de cera vegetal, vertidas a mano en lotes pequeños. Llegan envueltas y con nota: listas para entregar.</p>
+    <div class="hero__cta" data-reveal>
+      <a class="btn btn--camel" href="https://wa.me/573007652947?text=Hola%20Laura%2C%20quiero%20pedir%20una%20vela.%20%C2%BFQu%C3%A9%20aromas%20tienes%20esta%20semana%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+      <a class="btn btn--ghost" href="#coleccion">Ver la colección</a>
+    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true"><span>SCROLL</span><i></i></div>
+  <svg class="hero__wax" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,90 L0,44 C118,28 196,54 318,43 C452,31 522,7 662,26 C782,42 842,61 980,47 C1120,33 1182,49 1300,40 C1362,36 1402,43 1440,37 L1440,90 Z" fill="#EDE3D4"/>
+  </svg>
+</section>
+
+<!-- 2.3 HISTORIA (pin + scrub) -->
+<section id="historia" class="story" aria-label="Cómo se hace">
+  <div class="story__pin">
+    <div class="story__counter" aria-hidden="true"><span id="beatNum">01</span> / 04</div>
+
+    <article class="beat" data-beat="0">
+      <div class="beat__text">
+        <span class="eyebrow">El taller</span>
+        <h2 class="beat__title" data-words>Se vierte a mano.</h2>
+        <p class="beat__p">En lotes pequeños. Cada lata se llena una a una, y si crecer significa perder el acabado, no crecemos por ahí.</p>
+      </div>
+      <figure class="beat__media">
+        <div class="frame" data-parallax>
+          <video src="video/pour.mp4" poster="img/pour.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video>
+        </div>
+        <figcaption class="caption">Cera vegetal, mecha de algodón.</figcaption>
+      </figure>
+    </article>
+
+    <article class="beat" data-beat="1">
+      <div class="beat__text">
+        <span class="eyebrow">La cera</span>
+        <h2 class="beat__title" data-words>Cera vegetal, sin parafina.</h2>
+        <p class="beat__p">Arde más limpio y más parejo. Y cuando se acaba, el recipiente queda listo para volver a usarse.</p>
+      </div>
+      <figure class="beat__media">
+        <div class="frame" data-parallax>
+          <img src="img/06-macro-llama.jpg" alt="Primer plano de la llama de una vela de cera vegetal.">
+        </div>
+        <figcaption class="caption">La llama, de cerca.</figcaption>
+      </figure>
+    </article>
+
+    <article class="beat" data-beat="2">
+      <div class="beat__text">
+        <span class="eyebrow">El último 10%</span>
+        <h2 class="beat__title" data-words>Se ata a mano.</h2>
+        <p class="beat__p">Cinta color hueso y tarjeta para tu mensaje. Ese último gesto es la diferencia entre una vela y un regalo.</p>
+      </div>
+      <figure class="beat__media">
+        <div class="frame" data-parallax>
+          <video src="video/ribbon.mp4" poster="img/ribbon.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video>
+        </div>
+        <figcaption class="caption">Grosgrain, 25 mm.</figcaption>
+      </figure>
+    </article>
+
+    <article class="beat" data-beat="3">
+      <div class="beat__text">
+        <span class="eyebrow">Así llega</span>
+        <h2 class="beat__title" data-words>Lista para <em>regalar.</em></h2>
+        <p class="beat__p">La abres y ya está. No hay que envolver nada, ni arreglar nada, ni explicar nada.</p>
+      </div>
+      <figure class="beat__media">
+        <div class="frame" data-parallax>
+          <img src="img/00-real-trio.jpeg" alt="Tres velas Luaar atadas con cinta, foto real del taller.">
+        </div>
+        <figcaption class="caption">Tres, con cinta. Foto real del taller.</figcaption>
+      </figure>
+    </article>
+
+    <div class="story__progress" aria-hidden="true"><span class="story__bar"></span></div>
+  </div>
+</section>
+
+<!-- 2.4 MARQUEE -->
+<div id="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <div class="marquee__group"></div>
+    <div class="marquee__group"></div>
+  </div>
+</div>
+
+<!-- 2.5 COLECCIÓN -->
+<section id="coleccion" class="pad">
+  <header class="sec-head" data-reveal>
+    <span class="eyebrow">La colección</span>
+    <h2 class="sec-title">Tres formas de encender</h2>
+    <p class="sec-lead">Cada pieza se vierte sobre pedido. Escríbeme y te digo qué aromas hay esta semana.</p>
+  </header>
+  <div class="cards">
+    <article class="card" data-reveal>
+      <div class="card__img"><img src="img/01-hero-lata.jpg" alt="Vela Luaar en lata negra mate con tapa."></div>
+      <div class="card__body">
+        <span class="card__tag">Clásica</span>
+        <h3 class="card__name">Lata negra mate</h3>
+        <p class="card__p">Tapa que cierra, viaja sin riesgo y queda bien en cualquier mesa. La más pedida para regalar.</p>
+        <a class="btn btn--dark" href="https://wa.me/573007652947?text=Hola%2C%20me%20interesa%20la%20lata%20negra%20mate.%20%C2%BFQu%C3%A9%20aromas%20hay%20y%20cu%C3%A1nto%20vale%3F" target="_blank" rel="noopener">Consultar</a>
+      </div>
+    </article>
+    <article class="card" data-reveal>
+      <div class="card__img"><img src="img/02-cristal.jpg" alt="Vela Luaar en vaso de cristal tallado."></div>
+      <div class="card__body">
+        <span class="card__tag">Edición pequeña</span>
+        <h3 class="card__name">Cristal tallado</h3>
+        <p class="card__p">Vasos facetados, cada uno distinto. La luz se quiebra en el tallado y el recipiente se queda para siempre.</p>
+        <a class="btn btn--dark" href="https://wa.me/573007652947?text=Hola%2C%20me%20interesa%20la%20de%20cristal%20tallado.%20%C2%BFQu%C3%A9%20aromas%20hay%20y%20cu%C3%A1nto%20vale%3F" target="_blank" rel="noopener">Consultar</a>
+      </div>
+    </article>
+    <article class="card" data-reveal>
+      <div class="card__img"><span class="card__flag">Más pedida</span><img src="img/03-flatlay-regalo.jpg" alt="Set de regalo Luaar con dos velas, caja, cinta y tarjeta."></div>
+      <div class="card__body">
+        <span class="card__tag">Para obsequiar</span>
+        <h3 class="card__name">Set de regalo</h3>
+        <p class="card__p">Dos o tres velas en una caja, con cinta y tarjeta. Cierres de año, agradecimientos, detalles de empresa.</p>
+        <a class="btn btn--dark" href="https://wa.me/573007652947?text=Hola%2C%20me%20interesa%20el%20set%20de%20regalo.%20%C2%BFQu%C3%A9%20opciones%20hay%20y%20cu%C3%A1nto%20vale%3F" target="_blank" rel="noopener">Consultar</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 2.5b CÓMO PEDIR -->
+<section id="pedir" class="pad">
+  <header class="sec-head" data-reveal>
+    <span class="eyebrow">Cómo pedir</span>
+    <h2 class="sec-title">Tres pasos y ya.</h2>
+  </header>
+  <div class="steps">
+    <div class="step" data-reveal>
+      <span class="step__n">01</span>
+      <h3 class="step__t">Me escribes</h3>
+      <p>Por WhatsApp. Me cuentas para quién es y para cuándo.</p>
+    </div>
+    <div class="step" data-reveal>
+      <span class="step__n">02</span>
+      <h3 class="step__t">Elegimos juntas</h3>
+      <p>Aroma, formato y el mensaje de la tarjeta.</p>
+    </div>
+    <div class="step" data-reveal>
+      <span class="step__n">03</span>
+      <h3 class="step__t">Sale del taller</h3>
+      <p>Te confirmo pago y entrega, y te aviso cuando va en camino.</p>
+    </div>
+  </div>
+  <div class="steps__cta" data-reveal>
+    <a class="btn btn--camel" href="https://wa.me/573007652947?text=Hola%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Escribir ahora</a>
+  </div>
+</section>
+
+<!-- 2.6 LO QUE LLEGA EN LA CAJA -->
+<section id="caja" class="pad">
+  <div class="caja__grid">
+    <figure class="caja__media">
+      <div class="frame" data-parallax data-clip>
+        <img src="img/03-flatlay-regalo.jpg" alt="Contenido de una caja de regalo Luaar dispuesto sobre una mesa.">
+      </div>
+    </figure>
+    <div class="caja__text" data-reveal>
+      <span class="eyebrow">Lo que llega</span>
+      <h2 class="sec-title">Todo incluido. Nada que arreglar.</h2>
+      <ol class="caja__list">
+        <li><span class="caja__n">01</span><p>Caja en kraft natural o negro mate, con papel de seda.</p></li>
+        <li><span class="caja__n">02</span><p>Cinta grosgrain color hueso, atada a mano.</p></li>
+        <li><span class="caja__n">03</span><p>Tarjeta para tu mensaje; si quieres, la escribo a mano.</p></li>
+        <li><span class="caja__n">04</span><p>Caja de envío neutra: la sorpresa la abre quien la recibe.</p></li>
+      </ol>
+      <p class="caja__note">Te confirmo forma de pago y tiempo de entrega por WhatsApp según tu ciudad.</p>
+      <a class="btn btn--dark" href="https://wa.me/573007652947?text=Hola%2C%20quiero%20armar%20un%20regalo.%20Es%20para%20___%20y%20lo%20necesito%20para%20el%20___." target="_blank" rel="noopener">Armar mi regalo</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2.7 PARA QUE DURE -->
+<section id="cuidado" class="pad">
+  <header class="sec-head sec-head--left" data-reveal>
+    <h2 class="sec-title">Cuatro cosas y ya.</h2>
+  </header>
+  <div class="care">
+    <div class="care__col" data-reveal><span class="care__n">01</span><h3 class="care__t">La primera vez</h3><p>Déjala encendida 2 o 3 horas, hasta que la cera se derrita de borde a borde.</p></div>
+    <div class="care__col" data-reveal><span class="care__n">02</span><h3 class="care__t">Recorta la mecha</h3><p>A 5 mm antes de cada encendido. Evita el humo y el tizne.</p></div>
+    <div class="care__col" data-reveal><span class="care__n">03</span><h3 class="care__t">Máximo 4 horas</h3><p>Seguidas. Lejos de corrientes de aire, niños y mascotas.</p></div>
+    <div class="care__col" data-reveal><span class="care__n">04</span><h3 class="care__t">Cuando quede 1 cm</h3><p>Deja de usarla. Retira la cera con agua caliente y quédate con el recipiente.</p></div>
+  </div>
+</section>
+
+<!-- 2.8 CITA -->
+<section id="cita">
+  <blockquote class="cita__q" data-words>Una luz que no encandila. Apenas la suficiente.</blockquote>
+  <p class="cita__by">Luaar · de «luar», la luz de la luna</p>
+</section>
+
+<!-- 2.9 PREGUNTAS -->
+<section id="preguntas" class="pad">
+  <header class="sec-head sec-head--left" data-reveal>
+    <h2 class="sec-title">Preguntas</h2>
+  </header>
+  <div class="faq" data-reveal>
+    <details class="faq__item">
+      <summary><img class="faq__mark" src="logo/luaar-destello-camel.svg" alt="" aria-hidden="true"><span>¿Cuánto dura una vela?</span></summary>
+      <div class="faq__a"><p>Depende del formato. Cuando elijas la tuya te digo las horas aproximadas, y en la página de cuidados está cómo hacer que dure más.</p></div>
+    </details>
+    <details class="faq__item">
+      <summary><img class="faq__mark" src="logo/luaar-destello-camel.svg" alt="" aria-hidden="true"><span>¿Puedo personalizar la tarjeta?</span></summary>
+      <div class="faq__a"><p>Sí. Me escribes el mensaje por WhatsApp y va dentro de la caja, escrito a mano si lo prefieres.</p></div>
+    </details>
+    <details class="faq__item">
+      <summary><img class="faq__mark" src="logo/luaar-destello-camel.svg" alt="" aria-hidden="true"><span>¿Hacen pedidos para empresas o eventos?</span></summary>
+      <div class="faq__a"><p>Sí, en lotes pequeños y con tiempo. Cuéntame cantidad y fecha y te digo si llegamos.</p></div>
+    </details>
+    <details class="faq__item">
+      <summary><img class="faq__mark" src="logo/luaar-destello-camel.svg" alt="" aria-hidden="true"><span>¿Cómo pago y cómo recibo?</span></summary>
+      <div class="faq__a"><p>Todo por WhatsApp: te confirmo forma de pago, tiempo de entrega y te aviso apenas salga del taller.</p></div>
+    </details>
+    <details class="faq__item">
+      <summary><img class="faq__mark" src="logo/luaar-destello-camel.svg" alt="" aria-hidden="true"><span>¿Es cera vegetal de verdad?</span></summary>
+      <div class="faq__a"><p>Sí. Sin parafina. Por eso arde limpio y el recipiente se reutiliza.</p></div>
+    </details>
+  </div>
+</section>
+
+<!-- 2.10 CIERRE -->
+<section id="cierre">
+  <video class="cierre__bg" src="video/hero-h.mp4" poster="img/hero-h.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+  <div class="cierre__shade" aria-hidden="true"></div>
+  <div class="cierre__inner" data-reveal>
+    <img class="cierre__star" src="logo/luaar-destello-camel.svg" alt="" width="26" height="26" aria-hidden="true">
+    <h2 class="cierre__title">¿Para quién es?</h2>
+    <p class="cierre__p">Cuéntame para quién y para cuándo, y te ayudo a elegir el aroma. Te aviso apenas salga del taller.</p>
+    <a class="btn btn--camel btn--lg" href="https://wa.me/573007652947?text=Hola%20Laura%2C%20quiero%20una%20vela%20para%20regalar." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+  </div>
+</section>
+
+</main>
+
+<!-- 2.11 FOOTER -->
+<footer id="footer">
+  <img class="footer__mark" src="logo/luaar-principal-camel.svg" alt="Luaar" aria-hidden="true">
+  <div class="footer__cols">
+    <div class="footer__col"><p>Velas artesanales con cera vegetal · Hecho a mano</p></div>
+    <nav class="footer__col" aria-label="Secciones">
+      <a href="#coleccion">Colección</a>
+      <a href="#caja">Lo que llega</a>
+      <a href="#cuidado">Para que dure</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <div class="footer__col">
+      <a class="footer__link" href="https://instagram.com/luaar__ilumina" target="_blank" rel="noopener">@luaar__ilumina</a>
+      <a class="footer__link" href="https://wa.me/573007652947?text=Hola%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">+57 300 7652947</a>
+    </div>
+  </div>
+  <p class="footer__legal">© 2026 LUAAR · Manual de Marca v1.0</p>
+</footer>
+
+<!-- 2.12 MENÚ OVERLAY -->
+<nav id="menu" aria-hidden="true">
+  <ul class="menu__list">
+    <li><a href="#coleccion">Colección</a></li>
+    <li><a href="#caja">Lo que llega</a></li>
+    <li><a href="#cuidado">Para que dure</a></li>
+    <li><a href="#preguntas">Preguntas</a></li>
+    <li><a class="menu__wa" href="https://wa.me/573007652947?text=Hola%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">WhatsApp</a></li>
+  </ul>
+</nav>
+
+<!-- 2.13 BARRA CTA MÓVIL -->
+<div id="ctaBar">
+  <a class="btn btn--camel" href="https://wa.me/573007652947?text=Hola%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/app.js"></script>
+<script>(function(){var h=document.documentElement;function f(){var e=document.getElementById("hero");var b=document.getElementById("menuBtn");var open=b&&b.getAttribute("aria-expanded")==="true";h.classList.toggle("past-hero",open||(e?window.scrollY>e.offsetHeight*0.75:true));}window.addEventListener("scroll",f,{passive:true});window.addEventListener("load",f);document.addEventListener("click",function(){setTimeout(f,50);});f();})();</script>
+</body>
+</html>
