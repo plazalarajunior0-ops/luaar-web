@@ -1,339 +1,443 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Luaar · Ilumina</title>
-<meta name="description" content="Velas artesanales de cera vegetal, vertidas a mano en lotes pequeños. Llegan envueltas y con nota, listas para regalar. Pedidos por WhatsApp.">
-<meta property="og:title" content="Luaar · Ilumina">
-<meta property="og:description" content="Velas artesanales de cera vegetal, vertidas a mano en lotes pequeños. Llegan envueltas y con nota, listas para regalar. Pedidos por WhatsApp.">
-<meta property="og:image" content="https://plazalarajunior0-ops.github.io/luaar-web/img/01-hero-lata.jpg">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LUAAR · Velas aromáticas de cera vegetal en vidrio</title>
+<meta name="description" content="LUAAR: velas aromáticas de cera vegetal, producto colombiano, en recipientes de vidrio que se quedan contigo. Elige diseño y aroma, y pide la tuya por WhatsApp.">
+<meta property="og:title" content="LUAAR · Luz de luna, hecha vela">
+<meta property="og:description" content="Velas aromáticas de cera vegetal en vidrio. Producto colombiano.">
+<meta property="og:image" content="https://plazalarajunior0-ops.github.io/luaar-web/img/ambiente-hero.jpg">
 <meta property="og:url" content="https://plazalarajunior0-ops.github.io/luaar-web/">
-<meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="website">
-<link rel="icon" href="logo/luaar-destello-camel.svg" type="image/svg+xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 54 54%22%3E%3Cpath d=%22M36 6a22 22 0 1 0 12 40A24 24 0 0 1 36 6z%22 fill=%22none%22 stroke=%22%23C5A469%22 stroke-width=%223%22/%3E%3C/svg%3E">
+<meta name="theme-color" content="#1E1C1B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<script>document.documentElement.classList.add('js');</script>
-<!-- loader-failsafe -->
-<script>setTimeout(function(){var l=document.getElementById("loader");if(l&&getComputedStyle(l).display!=="none"){l.style.transition="opacity .5s";l.style.opacity="0";setTimeout(function(){l.style.display="none";},520);}},1900);setTimeout(function(){document.querySelectorAll("#top,.hero__line .w,.hero__video,.hero__lead,.hero__cta").forEach(function(e){if(getComputedStyle(e).opacity==="0"){e.style.opacity="1";e.style.transform="none";}});},3500);</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--luna:#FBF8F3;--crema:#F3ECE2;--arena:#D8C9B4;--dorado:#C5A469;--brasa:#B07A5B;--humo:#6B6764;--noche:#2B2928;--tinta:#1E1C1B;--wa:#25D366;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',Arial,sans-serif;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;color:var(--noche);background:var(--luna);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:min(1280px,calc(100% - 48px));margin:0 auto}
+/* grano */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.07;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.cap{font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:400}
+.gold{color:var(--brasa)}.dk .gold,.hero .gold,.end .gold,footer .gold{color:var(--dorado)}
+.serif{font-family:var(--serif);font-weight:300}
+h1,h2,h3{font-family:var(--serif);font-weight:300;letter-spacing:-.015em;line-height:1}
+h2{font-size:clamp(40px,5.2vw,76px)}
+em{font-style:italic;color:var(--brasa)}
+.dk em{color:var(--dorado)}
+.sym{display:inline-block;width:20px;height:20px;vertical-align:middle}
+.sym svg,.seal svg,.ph svg{width:100%;height:100%;display:block}
+
+/* botones */
+.btn{position:relative;display:inline-flex;align-items:center;gap:12px;padding:17px 30px;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:400;overflow:hidden;transition:color .4s var(--ease)}
+.btn span,.btn svg{position:relative;z-index:1}
+.btn::before{content:"";position:absolute;inset:0;transform:translateY(101%);transition:transform .5s var(--ease)}
+.btn:hover::before{transform:none}
+.btn svg{width:17px;height:17px;fill:currentColor}
+.btn-wa{background:var(--wa);color:var(--tinta)}.btn-wa:hover{color:#fff}.btn-wa::before{background:var(--tinta)}
+.btn-ln{border:1px solid currentColor}.btn-ln::before{background:var(--luna)}.btn-ln:hover{color:var(--tinta)}
+.btn-dk{background:var(--tinta);color:var(--luna)}.btn-dk::before{background:var(--brasa)}
+.lnk{display:inline-flex;align-items:center;gap:10px;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:400;padding-bottom:6px;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;transition:background-size .5s var(--ease)}
+.lnk:hover{background-size:30% 1px}
+.lnk svg{width:15px;height:15px;fill:var(--wa)}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;color:var(--luna);transition:background .4s,color .4s,box-shadow .4s}
+header.solid{background:rgba(251,248,243,.94);backdrop-filter:blur(12px);color:var(--noche);box-shadow:0 1px 0 var(--arena)}
+header .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:84px}
+header nav{display:flex;gap:34px}
+header nav a{font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:400;opacity:.9}
+header nav a:hover{opacity:1;color:var(--dorado)}
+.logo{display:flex;flex-direction:column;align-items:center;gap:6px}
+.logo .sym{width:18px;height:18px}
+.logo b{font-family:var(--serif);font-weight:400;font-size:24px;letter-spacing:.44em;padding-left:.44em;line-height:1}
+header .r{justify-self:end}
+header .btn{padding:12px 20px;font-size:10.5px}
+
+/* hero */
+.hero{position:relative;display:flex;min-height:min(100vh,980px);color:var(--luna);overflow:hidden;background:var(--tinta)}
+.hero .bg{position:absolute;inset:-4%;background:url(img/ambiente-hero.jpg) 62% 50%/cover;animation:kb 18s var(--ease) forwards}
+@keyframes kb{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,17,15,.82) 0%,rgba(20,17,15,.45) 45%,rgba(20,17,15,.05) 75%),linear-gradient(0deg,rgba(20,17,15,.6),transparent 40%)}
+.hero .in{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:170px 0 110px}
+.hero h1{font-size:clamp(56px,7.2vw,112px);max-width:12ch;line-height:.95}
+.hero em{color:var(--dorado)}
+.hero .cap{font-size:11px;margin:0}
+.up{animation:up 1.3s var(--ease) both}.u1{animation-delay:.15s}.u2{animation-delay:.3s}.u3{animation-delay:.45s}
+@keyframes up{from{opacity:0;transform:translateY(30px)}}
+.hero p:not(.cap){max-width:44ch;font-size:17px;color:#e6ddd1;margin:28px 0 40px}
+.hero .ctas{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.hero .seal{position:absolute;right:max(24px,calc((100% - 1280px)/2));bottom:110px;width:150px;height:150px;z-index:2;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero .scroll{position:absolute;left:50%;bottom:28px;z-index:2;transform:translateX(-50%);width:1px;height:56px;background:rgba(251,248,243,.35);overflow:hidden}
+.hero .scroll::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:var(--dorado);animation:drop 2.2s var(--ease) infinite}
+@keyframes drop{to{top:100%}}
+
+/* marquee */
+.mq{background:var(--crema);border-bottom:1px solid var(--arena);overflow:hidden;white-space:nowrap;padding:20px 0}
+.mq div{display:inline-flex;gap:48px;align-items:center;animation:mq 38s linear infinite;padding-right:48px}
+.mq span{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--noche)}
+.mq i{display:inline-block;width:16px;height:16px}
+@keyframes mq{to{transform:translateX(-100%)}}
+
+/* intro */
+.intro{padding:150px 0 130px}
+.intro .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:96px;align-items:center}
+.intro .txt h2{max-width:9ch}
+.intro .txt p:not(.cap){font-size:17px;color:var(--humo);max-width:46ch;margin-top:30px}
+.intro .stats{display:flex;gap:56px;margin-top:56px;padding-top:32px;border-top:1px solid var(--arena)}
+.intro .stats b{display:block;font-family:var(--serif);font-weight:300;font-size:58px;line-height:1;color:var(--noche)}
+.intro .stats span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--humo)}
+.frame{position:relative}
+.frame .img{aspect-ratio:4/5;overflow:hidden}
+.frame .img img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.frame:hover .img img{transform:scale(1.04)}
+.frame::before{content:"";position:absolute;inset:-22px 22px 22px -22px;border:1px solid var(--dorado);z-index:-1}
+.frame .tagc{position:absolute;left:-40px;bottom:48px;background:var(--luna);padding:18px 22px;box-shadow:0 20px 50px rgba(43,41,40,.12)}
+.frame .tagc .serif{font-size:24px;line-height:1.1}
+
+/* colección */
+.col{padding:40px 0 150px}
+.col .head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:72px}
+.col .head p:not(.cap){max-width:40ch;color:var(--humo)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px 28px}
+.card{position:relative}
+.card:focus-within .ov{transform:none}
+@media (hover:none){.card .ov{transform:none;padding:12px;background:linear-gradient(transparent,rgba(20,17,15,.55))}}
+.card.big{grid-column:span 2;grid-row:span 2}
+.card .img{position:relative;aspect-ratio:4/5;overflow:hidden;background:#8b6447}
+.card .img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),filter 1.2s}
+.card:hover .img img{transform:scale(1.06)}
+.card .no{position:absolute;top:16px;left:18px;color:var(--luna);font-size:10.5px;letter-spacing:.3em;z-index:2}
+.card .ov{position:absolute;inset:auto 0 0;padding:20px;background:linear-gradient(transparent,rgba(20,17,15,.75));transform:translateY(100%);transition:transform .6s var(--ease);display:flex;justify-content:center}
+.card:hover .ov{transform:none}
+.card .ov .btn{padding:13px 20px;font-size:10px}
+.card .meta{display:flex;justify-content:space-between;align-items:baseline;margin-top:20px;gap:10px}
+.card h3{font-size:30px;font-weight:400}
+.card.big h3{font-size:44px}
+.card .sz{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--brasa)}
+.card .d{font-size:14px;color:var(--humo);margin-top:4px}
+.dots{display:flex;gap:7px;margin-top:12px}
+.dots i{width:13px;height:13px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(43,41,40,.18)}
+.pr{font-family:var(--serif);font-size:26px;line-height:1;color:var(--noche);white-space:nowrap}
+.pr.ask{font-family:var(--sans);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--humo)}
+.sub{margin:120px 0 56px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.sub h3{font-size:clamp(34px,4vw,56px)}
+.sub p{color:var(--humo);max-width:40ch}
+.note{margin-top:56px;font-size:12px;letter-spacing:.06em;color:var(--humo)}
+@media(max-width:720px){.sub{flex-direction:column;align-items:flex-start;gap:16px;margin:80px 0 36px}.pr{font-size:22px}.note{margin-top:36px}}
+
+/* ritual */
+.rit{position:relative;color:var(--luna);padding:150px 0;overflow:hidden;background:var(--tinta)}
+.rit .bg{position:absolute;inset:0;background:url(img/ambiente-mesa.jpg) center 70%/cover;opacity:.24}
+.rit .wrap{position:relative}
+.rit .top{text-align:center;max-width:760px;margin:0 auto 90px}
+.rit .top p:not(.cap){color:#cfc5b9;margin-top:24px;font-size:17px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(216,201,180,.25)}
+.step{padding:44px 40px 0;border-right:1px solid rgba(216,201,180,.25)}
+.step:last-child{border-right:0}
+.step .ph{width:44px;height:44px;margin-bottom:28px}
+.step h3{font-size:34px;margin-bottom:12px}
+.step p{color:#cfc5b9;font-size:15px}
+.step .n{font-size:11px;letter-spacing:.3em;color:var(--dorado);margin-bottom:16px}
+
+/* aromas */
+.aro{padding:150px 0;background:var(--crema)}
+.aro .wrap{display:grid;grid-template-columns:.85fr 2fr;gap:80px}
+.aro .side{position:sticky;top:120px;align-self:start}
+.aro .side p:not(.cap){color:var(--humo);margin:24px 0 36px;max-width:36ch}
+.legend{display:flex;gap:16px;align-items:center;margin-top:28px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--humo)}
+.legend i{width:14px;height:14px;display:inline-block}
+.fams{display:grid;grid-template-columns:1fr 1fr;gap:56px 64px}
+.fam h3{font-size:38px;display:flex;justify-content:space-between;align-items:baseline;padding-bottom:16px;border-bottom:1px solid var(--noche);margin-bottom:8px}
+.fam h3 small{font-family:var(--sans);font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--brasa)}
+.fam ul{list-style:none}
+.fam li{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid var(--arena);font-size:16px;transition:padding .4s var(--ease),color .3s}
+.fam li:hover{padding-left:10px;color:var(--brasa)}
+.fam li i{width:13px;height:13px;display:inline-block}
+
+/* regalo */
+.reg{padding:150px 0}
+.reg .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:88px;align-items:center}
+.reg .img{aspect-ratio:16/11;overflow:hidden}
+.reg .img img{width:100%;height:100%;object-fit:cover}
+.reg ul{list-style:none;margin:32px 0 44px;border-top:1px solid var(--arena)}
+.reg li{display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--arena);color:var(--humo)}
+.reg li b{font-family:var(--serif);font-weight:400;font-size:20px;color:var(--noche);min-width:150px}
+
+/* faq */
+.faq{padding:0 0 150px}
+.faq .wrap{display:grid;grid-template-columns:.85fr 2fr;gap:80px}
+details{border-bottom:1px solid var(--arena);padding:26px 0}
+details:first-of-type{border-top:1px solid var(--arena)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--serif);font-size:26px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--sans);font-weight:300;font-size:26px;color:var(--dorado);transition:transform .4s var(--ease)}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--humo);margin-top:14px;max-width:62ch}
+
+/* cierre */
+.end{position:relative;color:var(--luna);text-align:center;padding:180px 0;overflow:hidden;background:var(--tinta)}
+.end .bg{position:absolute;inset:0;background:url(img/ambiente-noche.jpg) center/cover;opacity:.45}
+.end .wrap{position:relative}
+.end h2{font-size:clamp(48px,7vw,104px)}
+.end p{color:#e0d6ca;margin:26px auto 44px;max-width:44ch}
+
+footer{background:var(--tinta);color:#b9b0a6;padding:96px 0 40px;border-top:1px solid #34302d}
+footer .top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px}
+footer .logo{align-items:flex-start;color:var(--luna)}
+footer .logo b{padding-left:0}
+footer h4{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--dorado);font-weight:400;margin-bottom:18px}
+footer ul{list-style:none;font-size:15px;line-height:2.1}
+footer a:hover{color:var(--luna)}
+footer .bot{margin-top:80px;padding-top:24px;border-top:1px solid #34302d;display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#a39a91}
+
+.fab{position:fixed;right:22px;bottom:22px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,0,0,.25);transform:scale(0);transition:transform .5s var(--ease)}
+.fab.on{transform:scale(1)}
+.fab svg{width:28px;height:28px;fill:#fff}
+
+/* aparición */
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+@media (max-width:1020px){
+  header nav{display:none}
+  header .wrap{grid-template-columns:auto 1fr auto}
+  header .r{grid-column:3}
+  .logo{grid-column:1;align-items:flex-start}.logo b{padding-left:0}
+  .intro .wrap,.reg .wrap,.aro .wrap,.faq .wrap{grid-template-columns:1fr;gap:56px}
+  .aro .side{position:static}
+  .grid{grid-template-columns:1fr 1fr}
+  .card.big{grid-column:span 2;grid-row:auto}
+  .steps{grid-template-columns:1fr}
+  .step{border-right:0;border-bottom:1px solid rgba(216,201,180,.25);padding:36px 0}
+  footer .top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .wrap{width:calc(100% - 32px)}
+  header .wrap{height:70px}
+  header .btn span{display:none}header .btn{padding:12px}
+  .hero{min-height:100svh}
+  .hero .in{padding:120px 0 90px}
+  .hero .bg{background-position:68% 50%}
+  .hero::after{background:linear-gradient(0deg,rgba(20,17,15,.9) 0%,rgba(20,17,15,.55) 50%,rgba(20,17,15,.2) 100%)}
+  .hero h1{font-size:46px;max-width:none}
+  .hero p:not(.cap){font-size:16px;margin:20px 0 30px}
+  .hero .bg{background-image:url(img/ambiente-noche.jpg);background-position:50% 15%}
+  .hero .seal{width:96px;height:96px;top:96px;bottom:auto;right:16px}
+  .mq span{font-size:21px}
+  .intro,.col,.aro,.reg,.rit{padding-top:90px;padding-bottom:90px}
+  .col{padding-top:10px}
+  .intro .stats{gap:28px}.intro .stats b{font-size:44px}
+  .frame::before{inset:-12px 12px 12px -12px}
+  .frame .tagc{left:-8px;bottom:20px;padding:14px 16px}
+  .col .head{flex-direction:column;align-items:flex-start;margin-bottom:44px}
+  .grid{gap:36px 14px}
+  .card h3{font-size:24px}.card.big h3{font-size:34px}
+  .card .meta{flex-direction:column;gap:2px}
+  .card .ov{transform:none;padding:12px;background:linear-gradient(transparent,rgba(20,17,15,.55))}
+  .card .ov .btn{padding:10px 14px;font-size:9px;letter-spacing:.16em}
+  .card .ov .btn span{display:none}
+  .fams{grid-template-columns:1fr;gap:44px}
+  .reg li{flex-direction:column;gap:2px}
+  summary{font-size:22px}
+  .end{padding:120px 0}
+  footer .top{grid-template-columns:1fr}
+  footer .bot{flex-direction:column;gap:10px}
+}
+html.static *{animation:none!important;transition:none!important}html.static .rv{opacity:1;transform:none}html.static .hero{min-height:860px!important}@media (max-width:640px){html.static .hero{min-height:780px!important}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
 </head>
 <body>
 
-<!-- 2.0 PRELOADER -->
-<div id="loader" aria-hidden="true">
-  <img class="loader__star" src="logo/luaar-destello-camel.svg" alt="" width="28" height="28">
-  <img class="loader__mark" src="logo/luaar-horizontal-marfil.svg" alt="" width="120">
-</div>
+<header id="hd"><div class="wrap">
+  <nav><a href="#coleccion">Colección</a><a href="#ritual">Ritual</a><a href="#aromas">Aromas</a></nav>
+  <a class="logo" href="#top" aria-label="LUAAR, inicio"><i class="sym" data-sym></i><b>LUAAR</b></a>
+  <div class="r"><a class="btn btn-wa" href="#" aria-label="Escríbenos por WhatsApp" data-wa="Hola LUAAR, quiero información sobre sus velas."><i class="ico"></i><span>Escríbenos</span></a></div>
+</div></header>
 
-<!-- 2.1 HEADER -->
-<header id="top">
-  <a class="top__ig" href="https://instagram.com/luaar__ilumina" target="_blank" rel="noopener" aria-label="Instagram de Luaar">
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="5"/>
-      <circle cx="12" cy="12" r="4.2"/>
-      <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/>
-    </svg>
-  </a>
-  <a class="top__logo" href="#hero" aria-label="Luaar, inicio">
-    <img class="logo-marfil" src="logo/luaar-horizontal-marfil.svg" alt="Luaar" height="26">
-    <img class="logo-negro" src="logo/luaar-horizontal-negro.svg" alt="Luaar" height="26">
-  </a>
-  <button id="menuBtn" class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
-    <span class="menu-btn__bars"><span></span><span></span></span>
-  </button>
-</header>
-
-<main>
-
-<!-- 2.2 HERO -->
-<section id="hero">
-  <div class="hero__inner">
-    <div class="hero__stage">
-      <h1 class="hero__title">
-        <span class="hero__line hero__line--1" data-words>Luz que</span>
-        <span class="hero__line hero__line--2" data-words>se regala.</span>
-      </h1>
-      <div class="hero__media" aria-hidden="true">
-        <video class="hero__video" src="video/hero-v.mp4" poster="img/hero-v.jpg" autoplay muted loop playsinline preload="auto"></video>
-      </div>
-    </div>
-    <p class="hero__lead" data-reveal>Velas de cera vegetal, vertidas a mano en lotes pequeños. Llegan envueltas y con nota: listas para entregar.</p>
-    <div class="hero__cta" data-reveal>
-      <a class="btn btn--camel" href="https://wa.me/573007652947?text=Hola%20Laura%2C%20quiero%20pedir%20una%20vela.%20%C2%BFQu%C3%A9%20aromas%20tienes%20esta%20semana%3F" target="_blank" rel="noopener">Pedir por WhatsApp</a>
-      <a class="btn btn--ghost" href="#coleccion">Ver la colección</a>
+<section class="hero" id="top">
+  <div class="bg" role="img" aria-hidden="true"></div>
+  <div class="wrap in">
+    <p class="cap gold up">Cera vegetal · Producto colombiano</p>
+    <h1 class="up u1">Luz que se <em>siente</em>, aroma que se queda.</h1>
+    <p class="up u2">Velas de cera vegetal, libres de tóxicos, en recipientes de vidrio que se quedan en tu casa cuando la cera termina. Elige el diseño, elige el aroma y pide la tuya por WhatsApp.</p>
+    <div class="ctas up u3">
+      <a class="btn btn-wa" href="#" data-wa="Hola LUAAR, quiero pedir una vela."><i class="ico"></i><span>Pedir por WhatsApp</span></a>
+      <a class="btn btn-ln" href="#coleccion"><span>Ver la colección</span></a>
     </div>
   </div>
-  <div class="hero__scroll" aria-hidden="true"><span>SCROLL</span><i></i></div>
-  <svg class="hero__wax" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,90 L0,44 C118,28 196,54 318,43 C452,31 522,7 662,26 C782,42 842,61 980,47 C1120,33 1182,49 1300,40 C1362,36 1402,43 1440,37 L1440,90 Z" fill="#EDE3D4"/>
-  </svg>
+  <div class="seal" data-seal="#C5A469"></div>
+  <div class="scroll"></div>
 </section>
 
-<!-- 2.3 HISTORIA (pin + scrub) -->
-<section id="historia" class="story" aria-label="Cómo se hace">
-  <div class="story__pin">
-    <div class="story__counter" aria-hidden="true"><span id="beatNum">01</span> / 04</div>
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
 
-    <article class="beat" data-beat="0">
-      <div class="beat__text">
-        <span class="eyebrow">El taller</span>
-        <h2 class="beat__title" data-words>Se vierte a mano.</h2>
-        <p class="beat__p">En lotes pequeños. Cada lata se llena una a una, y si crecer significa perder el acabado, no crecemos por ahí.</p>
-      </div>
-      <figure class="beat__media">
-        <div class="frame" data-parallax>
-          <video src="video/pour.mp4" poster="img/pour.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video>
-        </div>
-        <figcaption class="caption">Cera vegetal, mecha de algodón.</figcaption>
-      </figure>
-    </article>
-
-    <article class="beat" data-beat="1">
-      <div class="beat__text">
-        <span class="eyebrow">La cera</span>
-        <h2 class="beat__title" data-words>Cera vegetal, sin parafina.</h2>
-        <p class="beat__p">Arde más limpio y más parejo. Y cuando se acaba, el recipiente queda listo para volver a usarse.</p>
-      </div>
-      <figure class="beat__media">
-        <div class="frame" data-parallax>
-          <img src="img/06-macro-llama.jpg" alt="Primer plano de la llama de una vela de cera vegetal.">
-        </div>
-        <figcaption class="caption">La llama, de cerca.</figcaption>
-      </figure>
-    </article>
-
-    <article class="beat" data-beat="2">
-      <div class="beat__text">
-        <span class="eyebrow">El último 10%</span>
-        <h2 class="beat__title" data-words>Se ata a mano.</h2>
-        <p class="beat__p">Cinta color hueso y tarjeta para tu mensaje. Ese último gesto es la diferencia entre una vela y un regalo.</p>
-      </div>
-      <figure class="beat__media">
-        <div class="frame" data-parallax>
-          <video src="video/ribbon.mp4" poster="img/ribbon.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video>
-        </div>
-        <figcaption class="caption">Grosgrain, 25 mm.</figcaption>
-      </figure>
-    </article>
-
-    <article class="beat" data-beat="3">
-      <div class="beat__text">
-        <span class="eyebrow">Así llega</span>
-        <h2 class="beat__title" data-words>Lista para <em>regalar.</em></h2>
-        <p class="beat__p">La abres y ya está. No hay que envolver nada, ni arreglar nada, ni explicar nada.</p>
-      </div>
-      <figure class="beat__media">
-        <div class="frame" data-parallax>
-          <img src="img/00-real-trio.jpeg" alt="Tres velas Luaar atadas con cinta, foto real del taller.">
-        </div>
-        <figcaption class="caption">Tres, con cinta. Foto real del taller.</figcaption>
-      </figure>
-    </article>
-
-    <div class="story__progress" aria-hidden="true"><span class="story__bar"></span></div>
+<section class="intro"><div class="wrap">
+  <div class="txt">
+    <p class="cap gold rv">La marca</p>
+    <h2 class="rv d1" style="margin-top:18px">La luz que <em>se queda</em>.</h2>
+    <p class="rv d2">LUAAR viene de <i>luar</i>, la luz de la luna: suave, que no deslumbra y que acompaña. Así pensamos cada vela. Un objeto tan bonito apagado como encendido, para ese momento del día en que la casa se queda en silencio.</p>
+    <div class="stats rv d3"><div><b>21</b><span>Aromas</span></div><div><b>100%</b><span>Cera vegetal</span></div><div><b>0</b><span>Tóxicos</span></div></div>
   </div>
-</section>
-
-<!-- 2.4 MARQUEE -->
-<div id="marquee" aria-hidden="true">
-  <div class="marquee__track">
-    <div class="marquee__group"></div>
-    <div class="marquee__group"></div>
+  <div class="frame rv d2">
+    <div class="img"><img src="img/ambiente-noche.jpg" alt="" loading="lazy"></div>
+    <div class="tagc"><div class="cap" style="font-size:9.5px;color:var(--brasa)">Luz de luna, hecha vela</div><div class="serif">Para las noches<br>que quieres que duren.</div></div>
   </div>
-</div>
+</div></section>
 
-<!-- 2.5 COLECCIÓN -->
-<section id="coleccion" class="pad">
-  <header class="sec-head" data-reveal>
-    <span class="eyebrow">La colección</span>
-    <h2 class="sec-title">Tres formas de encender</h2>
-    <p class="sec-lead">Cada pieza se vierte sobre pedido. Escríbeme y te digo qué aromas hay esta semana.</p>
-  </header>
-  <div class="cards">
-    <article class="card" data-reveal>
-      <div class="card__img"><img src="img/01-hero-lata.jpg" alt="Vela Luaar en lata negra mate con tapa."></div>
-      <div class="card__body">
-        <span class="card__tag">Clásica</span>
-        <h3 class="card__name">Lata negra mate</h3>
-        <p class="card__p">Tapa que cierra, viaja sin riesgo y queda bien en cualquier mesa. La más pedida para regalar.</p>
-        <a class="btn btn--dark" href="https://wa.me/573007652947?text=Hola%2C%20me%20interesa%20la%20lata%20negra%20mate.%20%C2%BFQu%C3%A9%20aromas%20hay%20y%20cu%C3%A1nto%20vale%3F" target="_blank" rel="noopener">Consultar</a>
-      </div>
-    </article>
-    <article class="card" data-reveal>
-      <div class="card__img"><img src="img/02-cristal.jpg" alt="Vela Luaar en vaso de cristal tallado."></div>
-      <div class="card__body">
-        <span class="card__tag">Edición pequeña</span>
-        <h3 class="card__name">Cristal tallado</h3>
-        <p class="card__p">Vasos facetados, cada uno distinto. La luz se quiebra en el tallado y el recipiente se queda para siempre.</p>
-        <a class="btn btn--dark" href="https://wa.me/573007652947?text=Hola%2C%20me%20interesa%20la%20de%20cristal%20tallado.%20%C2%BFQu%C3%A9%20aromas%20hay%20y%20cu%C3%A1nto%20vale%3F" target="_blank" rel="noopener">Consultar</a>
-      </div>
-    </article>
-    <article class="card" data-reveal>
-      <div class="card__img"><span class="card__flag">Más pedida</span><img src="img/03-flatlay-regalo.jpg" alt="Set de regalo Luaar con dos velas, caja, cinta y tarjeta."></div>
-      <div class="card__body">
-        <span class="card__tag">Para obsequiar</span>
-        <h3 class="card__name">Set de regalo</h3>
-        <p class="card__p">Dos o tres velas en una caja, con cinta y tarjeta. Cierres de año, agradecimientos, detalles de empresa.</p>
-        <a class="btn btn--dark" href="https://wa.me/573007652947?text=Hola%2C%20me%20interesa%20el%20set%20de%20regalo.%20%C2%BFQu%C3%A9%20opciones%20hay%20y%20cu%C3%A1nto%20vale%3F" target="_blank" rel="noopener">Consultar</a>
-      </div>
-    </article>
+<section class="col" id="coleccion"><div class="wrap">
+  <div class="head">
+    <div><p class="cap gold rv">La colección</p><h2 class="rv d1" style="margin-top:18px">Seis diseños,<br>un mismo <em>cuidado</em>.</h2></div>
+    <p class="rv d2">Vidrio tallado, acanalado o en panal. Cuando la vela termina, el recipiente se queda contigo: como joyero, florero o lo que imagines.</p>
   </div>
-</section>
+  <div class="grid" id="grid"></div>
+  <div class="sub"><div><p class="cap gold rv">En lata</p><h3 class="rv d1" style="margin-top:14px">Tres acabados, <em>una misma luz</em>.</h3></div><p class="rv d2">Latas con tapa que cierran y viajan sin riesgo. Cobre, bronce o negro mate.</p></div>
+  <div class="grid" id="latas"></div>
+  <p class="note rv">Precios en pesos colombianos (COP). Si el que quieres no tiene precio aquí, te lo confirmamos por WhatsApp.</p>
+</div></section>
 
-<!-- 2.5b CÓMO PEDIR -->
-<section id="pedir" class="pad">
-  <header class="sec-head" data-reveal>
-    <span class="eyebrow">Cómo pedir</span>
-    <h2 class="sec-title">Tres pasos y ya.</h2>
-  </header>
+<section class="rit dk" id="ritual"><div class="bg"></div><div class="wrap">
+  <div class="top"><p class="cap gold rv">Cómo pedir</p><h2 class="rv d1" style="margin-top:18px">Un ritual de <em>tres pasos</em>.</h2><p class="rv d2">Sin carritos ni formularios. Hablas con una persona que te ayuda a elegir.</p></div>
   <div class="steps">
-    <div class="step" data-reveal>
-      <span class="step__n">01</span>
-      <h3 class="step__t">Me escribes</h3>
-      <p>Por WhatsApp. Me cuentas para quién es y para cuándo.</p>
-    </div>
-    <div class="step" data-reveal>
-      <span class="step__n">02</span>
-      <h3 class="step__t">Elegimos juntas</h3>
-      <p>Aroma, formato y el mensaje de la tarjeta.</p>
-    </div>
-    <div class="step" data-reveal>
-      <span class="step__n">03</span>
-      <h3 class="step__t">Sale del taller</h3>
-      <p>Te confirmo pago y entrega, y te aviso cuando va en camino.</p>
-    </div>
+    <div class="step rv"><div class="ph" data-phase=".12"></div><div class="n">01</div><h3>Elige tu vela</h3><p>Seis diseños en vidrio, en cristal, ámbar o gris, de mini a grande.</p></div>
+    <div class="step rv d1"><div class="ph" data-phase=".3"></div><div class="n">02</div><h3>Elige el aroma</h3><p>Veintiún aromas entre amaderados, dulces, florales y frescos. Si dudas, te recomendamos.</p></div>
+    <div class="step rv d2"><div class="ph" data-phase=".5"></div><div class="n">03</div><h3>Escríbenos</h3><p>Por WhatsApp te confirmamos precio, forma de pago, envío y fecha de entrega.</p></div>
   </div>
-  <div class="steps__cta" data-reveal>
-    <a class="btn btn--camel" href="https://wa.me/573007652947?text=Hola%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Escribir ahora</a>
+  <div style="text-align:center;margin-top:80px" class="rv"><a class="btn btn-wa" href="#" data-wa="Hola LUAAR, quiero empezar mi pedido."><i class="ico"></i><span>Empezar mi pedido</span></a></div>
+</div></section>
+
+<section class="aro" id="aromas"><div class="wrap">
+  <div class="side">
+    <p class="cap gold rv">Los aromas</p>
+    <h2 class="rv d1" style="margin-top:18px">Veintiún formas de llenar la <em>casa</em>.</h2>
+    <p class="rv d2">Cuéntanos para qué espacio es y te ayudamos a elegir el aroma y el diseño.</p>
+    <a class="btn btn-dk rv d3" href="#" data-wa="Hola LUAAR, quiero que me recomienden un aroma."><span>Pedir una recomendación</span></a>
+    
   </div>
-</section>
+  <div class="fams" id="fams"></div>
+</div></section>
 
-<!-- 2.6 LO QUE LLEGA EN LA CAJA -->
-<section id="caja" class="pad">
-  <div class="caja__grid">
-    <figure class="caja__media">
-      <div class="frame" data-parallax data-clip>
-        <img src="img/03-flatlay-regalo.jpg" alt="Contenido de una caja de regalo Luaar dispuesto sobre una mesa.">
-      </div>
-    </figure>
-    <div class="caja__text" data-reveal>
-      <span class="eyebrow">Lo que llega</span>
-      <h2 class="sec-title">Todo incluido. Nada que arreglar.</h2>
-      <ol class="caja__list">
-        <li><span class="caja__n">01</span><p>Caja en kraft natural o negro mate, con papel de seda.</p></li>
-        <li><span class="caja__n">02</span><p>Cinta grosgrain color hueso, atada a mano.</p></li>
-        <li><span class="caja__n">03</span><p>Tarjeta para tu mensaje; si quieres, la escribo a mano.</p></li>
-        <li><span class="caja__n">04</span><p>Caja de envío neutra: la sorpresa la abre quien la recibe.</p></li>
-      </ol>
-      <p class="caja__note">Te confirmo forma de pago y tiempo de entrega por WhatsApp según tu ciudad.</p>
-      <a class="btn btn--dark" href="https://wa.me/573007652947?text=Hola%2C%20quiero%20armar%20un%20regalo.%20Es%20para%20___%20y%20lo%20necesito%20para%20el%20___." target="_blank" rel="noopener">Armar mi regalo</a>
-    </div>
+<section class="reg" id="regalos"><div class="wrap">
+  <div class="img rv"><img src="img/empaque.jpg" alt="Empaque de regalo LUAAR: caja negra, tarjeta y etiquetas" loading="lazy"></div>
+  <div>
+    <p class="cap gold rv">Para regalar</p>
+    <h2 class="rv d1" style="margin-top:18px">Un regalo que se enciende <em>despacio</em>.</h2>
+    <ul class="rv d2">
+      <li><b>Para alguien especial</b>Cuéntanos para quién es y te ayudamos a elegir diseño y aroma.</li>
+      <li><b>Varias velas</b>Si necesitas más de una, pregúntanos por disponibilidad.</li>
+      <li><b>Empaque</b>Pregúntanos por las opciones de presentación para regalo.</li>
+    </ul>
+    <a class="btn btn-wa rv d3" href="#" data-wa="Hola LUAAR, quiero armar un regalo."><i class="ico"></i><span>Armar un regalo</span></a>
   </div>
-</section>
+</div></section>
 
-<!-- 2.7 PARA QUE DURE -->
-<section id="cuidado" class="pad">
-  <header class="sec-head sec-head--left" data-reveal>
-    <h2 class="sec-title">Cuatro cosas y ya.</h2>
-  </header>
-  <div class="care">
-    <div class="care__col" data-reveal><span class="care__n">01</span><h3 class="care__t">La primera vez</h3><p>Déjala encendida 2 o 3 horas, hasta que la cera se derrita de borde a borde.</p></div>
-    <div class="care__col" data-reveal><span class="care__n">02</span><h3 class="care__t">Recorta la mecha</h3><p>A 5 mm antes de cada encendido. Evita el humo y el tizne.</p></div>
-    <div class="care__col" data-reveal><span class="care__n">03</span><h3 class="care__t">Máximo 4 horas</h3><p>Seguidas. Lejos de corrientes de aire, niños y mascotas.</p></div>
-    <div class="care__col" data-reveal><span class="care__n">04</span><h3 class="care__t">Cuando quede 1 cm</h3><p>Deja de usarla. Retira la cera con agua caliente y quédate con el recipiente.</p></div>
+<section class="faq"><div class="wrap">
+  <div><p class="cap gold rv">Preguntas</p><h2 class="rv d1" style="margin-top:18px;font-size:clamp(40px,4.4vw,60px)">Lo que nos <em>preguntan</em>.</h2></div>
+  <div class="rv d2">
+    <details><summary>¿Cómo hago mi pedido?</summary><p>Escríbenos por WhatsApp con el diseño y el aroma que te gustan. Te confirmamos precio, forma de pago y entrega en el chat.</p></details>
+    <details><summary>¿Cuánto cuestan?</summary><p>Cada diseño tiene su precio en la colección, en pesos colombianos. El envío se confirma por WhatsApp según tu ciudad.</p></details>
+    <details><summary>¿Hacen envíos?</summary><p>Escríbenos con tu ciudad y te contamos las opciones de entrega y su costo.</p></details>
+    <details><summary>¿Puedo elegir cualquier aroma para cualquier diseño?</summary><p>Escríbenos con el diseño y el aroma que te gustan y te confirmamos la disponibilidad.</p></details>
+    <details><summary>¿Qué hago con el vidrio cuando termine la vela?</summary><p>Lávalo con agua tibia y úsalo como joyero, florero o recipiente decorativo. El cristal es tuyo.</p></details>
+    <details><summary>¿Cómo cuido mi vela?</summary><p>La primera vez, déjala encendida hasta que la cera se derrita de borde a borde. Recorta la mecha a 5 mm antes de cada uso, apágala con la tapa y nunca la dejes encendida sin supervisión.</p></details>
   </div>
-</section>
+</div></section>
 
-<!-- 2.8 CITA -->
-<section id="cita">
-  <blockquote class="cita__q" data-words>Una luz que no encandila. Apenas la suficiente.</blockquote>
-  <p class="cita__by">Luaar · de «luar», la luz de la luna</p>
-</section>
+<section class="end dk"><div class="bg"></div><div class="wrap">
+  <i class="sym rv" data-sym style="width:34px;height:34px"></i>
+  <h2 class="rv d1" style="margin-top:26px">Enciende la noche <em>despacio</em>.</h2>
+  <p class="rv d2">Tu próxima vela está a un mensaje de distancia.</p>
+  <a class="btn btn-wa rv d3" href="#" data-wa="Hola LUAAR, quiero pedir una vela."><i class="ico"></i><span>Pedir por WhatsApp</span></a>
+</div></section>
 
-<!-- 2.9 PREGUNTAS -->
-<section id="preguntas" class="pad">
-  <header class="sec-head sec-head--left" data-reveal>
-    <h2 class="sec-title">Preguntas</h2>
-  </header>
-  <div class="faq" data-reveal>
-    <details class="faq__item">
-      <summary><img class="faq__mark" src="logo/luaar-destello-camel.svg" alt="" aria-hidden="true"><span>¿Cuánto dura una vela?</span></summary>
-      <div class="faq__a"><p>Depende del formato. Cuando elijas la tuya te digo las horas aproximadas, y en la página de cuidados está cómo hacer que dure más.</p></div>
-    </details>
-    <details class="faq__item">
-      <summary><img class="faq__mark" src="logo/luaar-destello-camel.svg" alt="" aria-hidden="true"><span>¿Puedo personalizar la tarjeta?</span></summary>
-      <div class="faq__a"><p>Sí. Me escribes el mensaje por WhatsApp y va dentro de la caja, escrito a mano si lo prefieres.</p></div>
-    </details>
-    <details class="faq__item">
-      <summary><img class="faq__mark" src="logo/luaar-destello-camel.svg" alt="" aria-hidden="true"><span>¿Hacen pedidos para empresas o eventos?</span></summary>
-      <div class="faq__a"><p>Sí, en lotes pequeños y con tiempo. Cuéntame cantidad y fecha y te digo si llegamos.</p></div>
-    </details>
-    <details class="faq__item">
-      <summary><img class="faq__mark" src="logo/luaar-destello-camel.svg" alt="" aria-hidden="true"><span>¿Cómo pago y cómo recibo?</span></summary>
-      <div class="faq__a"><p>Todo por WhatsApp: te confirmo forma de pago, tiempo de entrega y te aviso apenas salga del taller.</p></div>
-    </details>
-    <details class="faq__item">
-      <summary><img class="faq__mark" src="logo/luaar-destello-camel.svg" alt="" aria-hidden="true"><span>¿Es cera vegetal de verdad?</span></summary>
-      <div class="faq__a"><p>Sí. Sin parafina. Por eso arde limpio y el recipiente se reutiliza.</p></div>
-    </details>
+<footer><div class="wrap">
+  <div class="top">
+    <div><a class="logo" href="#top"><i class="sym" data-sym></i><b>LUAAR</b></a><p class="cap gold" style="margin-top:18px;font-size:9.5px">Luz de luna, hecha vela</p></div>
+    <div><h4>Explora</h4><ul><li><a href="#coleccion">Colección</a></li><li><a href="#aromas">Aromas</a></li><li><a href="#regalos">Regalos</a></li></ul></div>
+    <div><h4>Contacto</h4><ul><li><a href="#" data-wa="Hola LUAAR.">WhatsApp</a></li><li>Producto colombiano</li></ul></div>
+    <div id="redes" hidden><h4>Síguenos</h4><ul><li><a href="#" id="ig">Instagram</a></li><li><a href="#" id="tt">TikTok</a></li></ul></div>
   </div>
-</section>
+  <div class="bot"><span>© 2026 LUAAR</span><span>Cera vegetal · Producto colombiano</span></div>
+</div></footer>
 
-<!-- 2.10 CIERRE -->
-<section id="cierre">
-  <video class="cierre__bg" src="video/hero-h.mp4" poster="img/hero-h.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
-  <div class="cierre__shade" aria-hidden="true"></div>
-  <div class="cierre__inner" data-reveal>
-    <img class="cierre__star" src="logo/luaar-destello-camel.svg" alt="" width="26" height="26" aria-hidden="true">
-    <h2 class="cierre__title">¿Para quién es?</h2>
-    <p class="cierre__p">Cuéntame para quién y para cuándo, y te ayudo a elegir el aroma. Te aviso apenas salga del taller.</p>
-    <a class="btn btn--camel btn--lg" href="https://wa.me/573007652947?text=Hola%20Laura%2C%20quiero%20una%20vela%20para%20regalar." target="_blank" rel="noopener">Escribir por WhatsApp</a>
-  </div>
-</section>
+<a class="fab" id="fab" href="#" data-wa="Hola LUAAR, quiero pedir una vela." aria-label="Escribir por WhatsApp"><i class="ico"></i></a>
 
-</main>
+<script>if(navigator.webdriver)document.documentElement.classList.add("static");</script>
+<script src="luaar.js"></script>
+<script>
+/* === Datos que se cambian aquí === */
+var WHATSAPP = "573007652947";          // número con indicativo, sin + ni espacios
+var INSTAGRAM = "https://www.instagram.com/luaar__ilumina/", TIKTOK = "#";      // enlaces a los perfiles
 
-<!-- 2.11 FOOTER -->
-<footer id="footer">
-  <img class="footer__mark" src="logo/luaar-principal-camel.svg" alt="Luaar" aria-hidden="true">
-  <div class="footer__cols">
-    <div class="footer__col"><p>Velas artesanales con cera vegetal · Hecho a mano</p></div>
-    <nav class="footer__col" aria-label="Secciones">
-      <a href="#coleccion">Colección</a>
-      <a href="#caja">Lo que llega</a>
-      <a href="#cuidado">Para que dure</a>
-      <a href="#preguntas">Preguntas</a>
-    </nav>
-    <div class="footer__col">
-      <a class="footer__link" href="https://instagram.com/luaar__ilumina" target="_blank" rel="noopener">@luaar__ilumina</a>
-      <a class="footer__link" href="https://wa.me/573007652947?text=Hola%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">+57 300 7652947</a>
-    </div>
-  </div>
-  <p class="footer__legal">© 2026 LUAAR · Manual de Marca v1.0</p>
-</footer>
+var VELAS = [
+  {n:"Crystal", p:129000, sz:"Grande", d:"Tallado en diamante", img:"crystal.png", colores:["#8f8c88","#c99a5b","#e8e4dc"], big:true},
+  {n:"Charlot", p:86100, sz:"Mediana", d:"Tallado en diamante", img:"charlot.png", colores:["#c99a5b","#e8e4dc"]},
+  {n:"Penelope", p:63800, sz:"", d:"Textura panal, tapa bombé", img:"penelope.png", colores:["#e8e4dc"]},
+  {n:"Mini Reina", p:51250, sz:"Mini", d:"Tallado en diamante", img:"mini-reina.png", pos:"22% 50%", colores:["#e8e4dc"]},
+  {n:"Carpita", p:26600, sz:"", d:"Vidrio acanalado, tapa cónica", img:"carpita.png", colores:["#c99a5b"]},
+  {n:"Circo", p:26600, sz:"", d:"Tapa tipo carpa, cuerpo acanalado", img:"circo.png", colores:[]}
+];
+var LATAS = [
+  {n:"Lata cobre", d:"Cobre mate, tapa que cierra", img:"lata-cobre.jpg"},
+  {n:"Lata bronce", d:"Bronce champagne, tapa que cierra", img:"lata-bronce.jpg"},
+  {n:"Lata negra mate", d:"Negro mate, interior dorado", img:"lata-negra.jpg"}
+];
+var AROMAS = {
+  "Amaderados":{t:"Cálidos",l:[["Cedarwood",.38],["Ancient cedarwood",.5],["Twilight woods",.38],["Leather",.5],["Whiskey",.5],["Ron",.38]]},
+  "Dulces":{t:"Envolventes",l:[["French vanilla",.25],["Cookies and cream",.38],["Apple cinnamon",.38],["Banana nuts",.25],["Cherry merlot",.38],["Fall otoño",.38]]},
+  "Florales":{t:"Suaves",l:[["Red roses",.25],["Sparkling rose",.25],["Japanese cherry blossom",.12],["Loto azul",.12],["Angel wings",.25]]},
+  "Frescos":{t:"Ligeros",l:[["Citronella",.25],["Verbena",.12],["Coco lemonade",.12],["Hawaiian blast",.25]]}
+};
 
-<!-- 2.12 MENÚ OVERLAY -->
-<nav id="menu" aria-hidden="true">
-  <ul class="menu__list">
-    <li><a href="#coleccion">Colección</a></li>
-    <li><a href="#caja">Lo que llega</a></li>
-    <li><a href="#cuidado">Para que dure</a></li>
-    <li><a href="#preguntas">Preguntas</a></li>
-    <li><a class="menu__wa" href="https://wa.me/573007652947?text=Hola%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">WhatsApp</a></li>
-  </ul>
-</nav>
+function cop(n){return "$"+n.toLocaleString("es-CO");}
+function precio(v){return v.p?'<span class="pr">'+cop(v.p)+'</span>':'<span class="pr ask">Consultar</span>';}
+var ICO='<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.3.8 3.1.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.2c0-.2-.2-.2-.4-.3z"/></svg>';
 
-<!-- 2.13 BARRA CTA MÓVIL -->
-<div id="ctaBar">
-  <a class="btn btn--camel" href="https://wa.me/573007652947?text=Hola%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp</a>
-</div>
+document.getElementById("grid").innerHTML=VELAS.map(function(v,i){
+  return '<article class="card rv'+(v.big?' big':'')+(i%2?' d1':'')+'"><div class="img"><span class="no">Nº 0'+(i+1)+'</span><img src="img/'+v.img+'"'+(v.pos?' style="object-position:'+v.pos+'"':'')+' alt="Vela '+v.n+' LUAAR" loading="lazy">'+
+  '<div class="ov"><a class="btn btn-wa" href="#" aria-label="Pedir '+v.n+' por WhatsApp" data-wa="Hola LUAAR, quiero la vela '+v.n+'.">'+'<i class="ico"></i><span>Pedir '+v.n+'</span></a></div></div>'+
+  '<div class="meta"><h3>'+v.n+'</h3>'+precio(v)+'</div><p class="d">'+(v.sz?v.sz+' · ':'')+v.d+'</p>'+
+  '<div class="dots">'+v.colores.map(function(c){return '<i style="background:'+c+'"></i>';}).join("")+'</div></article>';}).join("");
+document.getElementById("latas").innerHTML=LATAS.map(function(v,i){
+  return '<article class="card rv'+(i%2?' d1':'')+'"><div class="img"><img src="img/'+v.img+'" alt="'+v.n+' LUAAR" loading="lazy">'+
+  '<div class="ov"><a class="btn btn-wa" href="#" aria-label="Pedir '+v.n+' por WhatsApp" data-wa="Hola LUAAR, quiero la '+v.n.toLowerCase()+'. ¿Cuánto vale y qué aromas hay?">'+'<i class="ico"></i><span>Pedir</span></a></div></div>'+
+  '<div class="meta"><h3>'+v.n+'</h3>'+precio(v)+'</div><p class="d">'+v.d+'</p></article>';}).join("");
+document.getElementById("fams").innerHTML=Object.keys(AROMAS).map(function(k,i){var f=AROMAS[k];
+  return '<div class="fam rv'+(i%2?' d1':'')+'"><h3>'+k+'<small>'+f.t+'</small></h3><ul>'+f.l.map(function(a){return '<li><span>'+a[0]+'</span></li>';}).join("")+'</ul></div>';}).join("");
+var words=["Cera vegetal","Producto colombiano","Libre de tóxicos","Veintiún aromas","El vidrio se queda contigo","Pide por WhatsApp"];
+var m="";for(var r=0;r<2;r++)words.forEach(function(w){m+='<span>'+w+'</span><i class="sym" data-sym></i>';});
+document.getElementById("mq").innerHTML=m;
+document.getElementById("mq").insertAdjacentHTML("afterend",'<div>'+m+'</div>');
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/app.js"></script>
-<script>(function(){var h=document.documentElement;function f(){var e=document.getElementById("hero");var b=document.getElementById("menuBtn");var open=b&&b.getAttribute("aria-expanded")==="true";h.classList.toggle("past-hero",open||(e?window.scrollY>e.offsetHeight*0.75:true));}window.addEventListener("scroll",f,{passive:true});window.addEventListener("load",f);document.addEventListener("click",function(){setTimeout(f,50);});f();})();</script>
+/* símbolos, sello y fases */
+document.querySelectorAll("[data-sym]").forEach(function(e){e.innerHTML=LUAAR.sym(e.dataset.sym||"#C5A469");});
+document.querySelectorAll("[data-seal]").forEach(function(e){e.innerHTML=LUAAR.seal(e.dataset.seal);});
+document.querySelectorAll("[data-phase]").forEach(function(e){e.innerHTML=LUAAR.phase(+e.dataset.phase,e.dataset.c||"#C5A469");});
+document.querySelectorAll("i.ico").forEach(function(i){i.outerHTML=ICO;});
+document.querySelectorAll("[data-wa]").forEach(function(a){a.href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(a.dataset.wa);a.target="_blank";a.rel="noopener";});
+document.getElementById("ig").href=INSTAGRAM;document.getElementById("tt").href=TIKTOK;
+if(TIKTOK==="#")document.getElementById("tt").parentNode.hidden=true;
+if(INSTAGRAM!=="#"||TIKTOK!=="#")document.getElementById("redes").hidden=false;
+
+/* header sólido, botón flotante y aparición al hacer scroll */
+var hd=document.getElementById("hd"),fab=document.getElementById("fab");
+function onS(){var y=window.scrollY;hd.classList.toggle("solid",y>60);fab.classList.toggle("on",y>window.innerHeight*.8);}
+window.addEventListener("scroll",onS,{passive:true});onS();
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.12,rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll(".rv").forEach(function(e){io.observe(e);});}
+else document.querySelectorAll(".rv").forEach(function(e){e.classList.add("in");});
+if(/[?&]captura/.test(location.search)||navigator.webdriver)document.querySelectorAll(".rv").forEach(function(e){e.classList.add("in");});
+</script>
 </body>
 </html>
