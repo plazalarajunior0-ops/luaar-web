@@ -3,17 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LUAAR · Velas aromáticas de cera vegetal en vidrio</title>
+<title>LUAAR · Velas artesanales de cera vegetal en cristal</title>
 <meta name="description" content="Velas artesanales de cera vegetal, libres de tóxicos, en envases de cristal. Elige la esencia y el diseño, y pide la tuya por WhatsApp.">
 <meta property="og:locale" content="es_CO">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:title" content="LUAAR · Luz de luna, hecha vela">
 <meta property="og:description" content="Velas artesanales de cera vegetal en envases de cristal. Hechas en Barranquilla, Colombia.">
 <script>document.documentElement.className+=" js";</script>
-<meta property="og:image" content="https://plazalarajunior0-ops.github.io/luaar-web/img/ambiente-hero.jpg">
+<meta property="og:image" content="https://plazalarajunior0-ops.github.io/luaar-web/img/og-luaar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="LUAAR, luz de luna hecha vela: logo sobre una vela encendida">
+<meta name="twitter:image" content="https://plazalarajunior0-ops.github.io/luaar-web/img/og-luaar.jpg">
 <meta property="og:url" content="https://plazalarajunior0-ops.github.io/luaar-web/">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 54 54%22%3E%3Cpath d=%22M36 6a22 22 0 1 0 12 40A24 24 0 0 1 36 6z%22 fill=%22none%22 stroke=%22%23C5A469%22 stroke-width=%223%22/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="img/icono-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="img/icono-192.png">
 <meta name="theme-color" content="#1E1C1B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,7 +76,7 @@ header .btn{padding:12px 20px;font-size:10.5px}
 
 /* hero */
 .hero{position:relative;display:flex;min-height:min(100vh,980px);color:var(--luna);overflow:hidden;background:var(--tinta)}
-.hero .bg{position:absolute;inset:-4%;background:url(img/ambiente-hero.jpg) 62% 50%/cover;animation:kb 18s var(--ease) forwards;scale:calc(1 + var(--hp,0)*.15)}
+.hero .bg{position:absolute;inset:-4%;background:url(img/ambiente-hero.webp) 62% 50%/cover;animation:kb 18s var(--ease) forwards;scale:calc(1 + var(--hp,0)*.15)}
 @keyframes kb{from{transform:scale(1.08)}to{transform:scale(1)}}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,17,15,.82) 0%,rgba(20,17,15,.45) 45%,rgba(20,17,15,.05) 75%),linear-gradient(0deg,rgba(20,17,15,.6),transparent 40%)}
 .hero .hin{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:170px 0 110px;translate:0 calc(var(--hp,0)*-70px);opacity:calc(1 - var(--hp,0)*1.3)}
@@ -143,7 +149,7 @@ header .btn{padding:12px 20px;font-size:10.5px}
 
 /* ritual */
 .rit{position:relative;color:var(--luna);padding:150px 0;overflow:hidden;background:var(--tinta)}
-.rit .bg{position:absolute;inset:0;background:url(img/ambiente-mesa.jpg) center 70%/cover;opacity:.24}
+.rit .bg{position:absolute;inset:0;background:url(img/ambiente-mesa.webp) center 70%/cover;opacity:.24}
 .rit .wrap{position:relative}
 .rit .top{text-align:center;max-width:760px;margin:0 auto 90px}
 .rit .top p:not(.cap){color:#cfc5b9;margin-top:24px;font-size:17px}
@@ -192,7 +198,7 @@ details p{color:var(--humo);margin-top:14px;max-width:62ch}
 
 /* cierre */
 .end{position:relative;color:var(--luna);text-align:center;padding:180px 0;overflow:hidden;background:var(--tinta)}
-.end .bg{position:absolute;inset:0;background:url(img/ambiente-noche.jpg) center/cover;opacity:.45}
+.end .bg{position:absolute;inset:0;background:url(img/ambiente-noche.webp) center/cover;opacity:.45}
 .end .wrap{position:relative}
 .end h2{font-size:clamp(48px,7vw,104px)}
 .end p{color:#e0d6ca;margin:26px auto 44px;max-width:44ch}
@@ -291,7 +297,7 @@ footer .kv .k{display:block;font-size:10px;letter-spacing:.24em;text-transform:u
   .hero::after{background:linear-gradient(0deg,rgba(20,17,15,.9) 0%,rgba(20,17,15,.55) 50%,rgba(20,17,15,.2) 100%)}
   .hero h1{font-size:46px;max-width:none}
   .hero p:not(.cap){font-size:16px;margin:20px 0 30px}
-  .hero .bg{background-image:url(img/ambiente-noche.jpg);background-position:50% 15%}
+  .hero .bg{background-image:url(img/ambiente-noche.webp);background-position:50% 15%}
   .hero .seal{width:96px;height:96px;top:96px;bottom:auto;right:16px}
   .mq span{font-size:21px}
   .intro,.col,.aro,.reg,.rit{padding-top:90px;padding-bottom:90px}
@@ -354,7 +360,7 @@ html.static *{animation:none!important;transition:none!important}html.static .rv
     <div class="stats rv d3"><div><b data-to="21">21</b><span>Esencias</span></div><div><b data-to="100" data-suf="%">100%</b><span>Cera vegetal</span></div><div><b>0</b><span>Tóxicos</span></div></div>
   </div>
   <div class="frame">
-    <div class="img cur"><img src="img/ambiente-noche.jpg" alt="" loading="lazy" data-depth="50"></div>
+    <div class="img cur"><img src="img/ambiente-noche.webp" alt="" loading="lazy" data-depth="50"></div>
     <div class="tagc rv d6"><div class="cap" style="font-size:9.5px;color:var(--brasa)">Luz de luna, hecha vela</div><div class="serif">Para transformar<br>tus noches y reuniones.</div></div>
   </div>
 </div></section>
@@ -397,7 +403,7 @@ html.static *{animation:none!important;transition:none!important}html.static .rv
 </div></section>
 
 <section class="reg" id="regalos"><div class="wrap">
-  <div class="img cur"><img src="img/empaque.jpg" alt="Empaque de regalo LUAAR: caja negra, tarjeta y etiquetas" loading="lazy" data-depth="50"></div>
+  <div class="img cur"><img src="img/empaque.webp" alt="Empaque de regalo LUAAR: caja negra, tarjeta y etiquetas" loading="lazy" data-depth="50"></div>
   <div>
     <p class="cap gold ls">Para regalar</p>
     <h2 class="split" style="margin-top:18px">Un regalo que se enciende <em>despacio</em>.</h2>
@@ -460,17 +466,17 @@ var WHATSAPP = "573007652947";          // número con indicativo, sin + ni espa
 var INSTAGRAM = "https://www.instagram.com/luaar__ilumina/", TIKTOK = "#";      // enlaces a los perfiles
 
 var VELAS = [
-  {n:"Crystal", p:130000, sz:"Grande", d:"Tallado en diamante", img:"crystal.png", colores:["#8f8c88","#c99a5b","#e8e4dc"], big:true},
-  {n:"Charlot", p:90000, sz:"Mediana", d:"Tallado en diamante", img:"charlot.png", colores:["#c99a5b","#e8e4dc"]},
-  {n:"Penelope", p:65000, sz:"", d:"Textura panal, tapa bombé", img:"penelope.png", colores:["#e8e4dc"]},
-  {n:"Mini Reina", p:55000, sz:"Mini", d:"Tallado en diamante", img:"mini-reina.png", pos:"22% 50%", colores:["#e8e4dc"]},
-  {n:"Carpita", p:30000, sz:"", d:"Vidrio acanalado, tapa cónica", img:"carpita.png", colores:["#c99a5b"]},
-  {n:"Circo", p:30000, sz:"", d:"Tapa tipo carpa, cuerpo acanalado", img:"circo.png", colores:[]}
+  {n:"Crystal", p:130000, sz:"Grande", d:"Tallado en diamante", img:"crystal.webp", colores:["#8f8c88","#c99a5b","#e8e4dc"], big:true},
+  {n:"Charlot", p:90000, sz:"Mediana", d:"Tallado en diamante", img:"charlot.webp", colores:["#c99a5b","#e8e4dc"]},
+  {n:"Penelope", p:65000, sz:"", d:"Textura panal, tapa bombé", img:"penelope.webp", colores:["#e8e4dc"]},
+  {n:"Mini Reina", p:55000, sz:"Mini", d:"Tallado en diamante", img:"mini-reina.webp", pos:"22% 50%", colores:["#e8e4dc"]},
+  {n:"Carpita", p:30000, sz:"", d:"Vidrio acanalado, tapa cónica", img:"carpita.webp", colores:["#c99a5b"]},
+  {n:"Circo", p:30000, sz:"", d:"Tapa tipo carpa, cuerpo acanalado", img:"circo.webp", colores:[]}
 ];
 var LATAS = [
-  {n:"Lata cobre", p:55000, d:"Cobre mate, tapa que cierra", img:"lata-cobre.jpg"},
-  {n:"Lata bronce", p:55000, d:"Bronce champagne, tapa que cierra", img:"lata-bronce.jpg"},
-  {n:"Lata negra mate", p:55000, d:"Negro mate, interior dorado", img:"lata-negra.jpg"}
+  {n:"Lata cobre", p:55000, d:"Cobre mate, tapa que cierra", img:"lata-cobre.webp"},
+  {n:"Lata bronce", p:55000, d:"Bronce champagne, tapa que cierra", img:"lata-bronce.webp"},
+  {n:"Lata negra mate", p:55000, d:"Negro mate, interior dorado", img:"lata-negra.webp"}
 ];
 var AROMAS = {
   "Amaderados":{t:"Cálidos",l:[["Cedarwood",.38],["Ancient cedarwood",.5],["Twilight woods",.38],["Leather",.5],["Whiskey",.5],["Ron",.38]]},
