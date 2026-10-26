@@ -18,6 +18,7 @@
 <meta property="og:url" content="https://plazalarajunior0-ops.github.io/luaar-web/">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 54 54%22%3E%3Cpath d=%22M36 6a22 22 0 1 0 12 40A24 24 0 0 1 36 6z%22 fill=%22none%22 stroke=%22%23C5A469%22 stroke-width=%223%22/%3E%3C/svg%3E">
+<link rel="canonical" href="https://plazalarajunior0-ops.github.io/luaar-web/">
 <link rel="apple-touch-icon" href="img/icono-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="img/icono-192.png">
 <meta name="theme-color" content="#1E1C1B">
@@ -90,8 +91,8 @@ header .btn{padding:12px 20px;font-size:10.5px}
 .hero .seal{position:absolute;right:max(24px,calc((100% - 1280px)/2));bottom:110px;width:150px;height:150px;z-index:2;animation:spin 40s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .hero .scroll{position:absolute;left:50%;bottom:28px;z-index:2;transform:translateX(-50%);width:1px;height:56px;background:rgba(251,248,243,.35);overflow:hidden}
-.hero .scroll::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:var(--dorado);animation:drop 2.2s var(--ease) infinite}
-@keyframes drop{to{top:100%}}
+.hero .scroll::after{content:"";position:absolute;left:0;top:0;width:1px;height:50%;background:var(--dorado);animation:drop 2.2s var(--ease) infinite}
+@keyframes drop{from{transform:translateY(-100%)}to{transform:translateY(200%)}}
 
 /* marquee */
 .mq{background:var(--crema);border-bottom:1px solid var(--arena);overflow:hidden;white-space:nowrap;padding:20px 0}
@@ -207,7 +208,7 @@ footer{background:var(--tinta);color:#b9b0a6;padding:96px 0 100px;border-top:1px
 footer .top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px}
 footer .logo{align-items:flex-start;color:var(--luna)}
 footer .logo b{padding-left:0}
-footer h4{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--dorado);font-weight:400;margin-bottom:18px}
+footer h3{font-family:var(--sans);line-height:1.65;letter-spacing:.3em;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--dorado);font-weight:400;margin-bottom:18px}
 footer ul{list-style:none;font-size:15px;line-height:2.1}
 footer a:hover{color:var(--luna)}
 footer .bot{margin-top:80px;padding-top:24px;border-top:1px solid #34302d;display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#a39a91}
@@ -232,8 +233,10 @@ footer .kv .k{display:block;font-size:10px;letter-spacing:.24em;text-transform:u
 .split.in .sw>span{transform:none}
 .js .split{visibility:hidden}.js .split.ready{visibility:visible}
 .nw{white-space:nowrap}
-.js .ls{transition:letter-spacing 1.8s var(--ease),opacity 1.8s var(--ease)}
-.js .ls:not(.in){letter-spacing:.9em;opacity:0}
+.js .ls{transition:clip-path 1.6s var(--ease),opacity 1.6s var(--ease),translate 1.6s var(--ease)}
+.js .ls:not(.in){clip-path:inset(0 100% 0 0);opacity:0;translate:-10px 0}
+.js:not(.fonts) .up{animation-play-state:paused}
+.js:not(.fonts) .hero .hin{visibility:hidden}
 .js .cur{clip-path:inset(100% 0 0 0);transition:clip-path 1.8s var(--ease)}
 .js .cur.in{clip-path:inset(0 0 0 0)}
 .js .cur img{transform:scale(1.22)}
@@ -440,14 +443,14 @@ html.static *{animation:none!important;transition:none!important}html.static .rv
     <div class="fb"><a class="logo" href="#top"><i class="sym" data-sym></i><b>LUAAR</b></a><p class="cap gold" style="margin-top:18px;font-size:9.5px">Luz de luna, hecha vela</p>
       <p class="fd">Velas artesanales de cera vegetal, libres de tóxicos, en envases de cristal. Hechas en Barranquilla, Colombia.</p>
       <a class="lnk" href="#" data-wa="Hola LUAAR, quiero pedir una vela."><i class="ico"></i>Pedir por WhatsApp</a></div>
-    <div><h4>Explora</h4><ul><li><a href="#coleccion">Colección</a></li><li><a href="#esencias">Esencias</a></li><li><a href="#ritual">Cómo pedir</a></li><li><a href="#regalos">Regalos</a></li><li><a href="#preguntas">Preguntas</a></li></ul></div>
-    <div><h4>Contacto</h4><ul class="kv">
+    <div><h3>Explora</h3><ul><li><a href="#coleccion">Colección</a></li><li><a href="#esencias">Esencias</a></li><li><a href="#ritual">Cómo pedir</a></li><li><a href="#regalos">Regalos</a></li><li><a href="#preguntas">Preguntas</a></li></ul></div>
+    <div><h3>Contacto</h3><ul class="kv">
       <li><span class="k">WhatsApp</span><a href="#" data-wa="Hola LUAAR." id="wa-num">+57 300 765 2947</a></li>
       <li><span class="k">Instagram</span><a href="#" id="ig">@luaar__ilumina</a></li>
       <li id="tt-li" hidden><span class="k">TikTok</span><a href="#" id="tt">TikTok</a></li>
       <li><span class="k">Ciudad</span>Barranquilla, Colombia</li></ul></div>
     <!-- Pedidos: oculto hasta tener los datos reales de envíos, pagos y horario (quitar «hidden» para mostrarlo) -->
-    <div hidden><h4>Pedidos</h4><ul class="kv">
+    <div hidden><h3>Pedidos</h3><ul class="kv">
       <li><span class="k">Envíos</span>________</li>
       <li><span class="k">Pagos</span>________</li>
       <li><span class="k">Horario</span>________</li></ul></div>
@@ -470,7 +473,7 @@ var VELAS = [
   {n:"Charlot", p:90000, sz:"Mediana", d:"Tallado en diamante", img:"charlot.webp", colores:["#c99a5b","#e8e4dc"]},
   {n:"Penelope", p:65000, sz:"", d:"Textura panal, tapa bombé", img:"penelope.webp", colores:["#e8e4dc"]},
   {n:"Mini Reina", p:55000, sz:"Mini", d:"Tallado en diamante", img:"mini-reina.webp", pos:"22% 50%", colores:["#e8e4dc"]},
-  {n:"Carpita", p:30000, sz:"", d:"Vidrio acanalado, tapa cónica", img:"carpita.webp", colores:["#c99a5b"]},
+  {n:"Carpita", p:30000, sz:"", d:"Cristal acanalado, tapa cónica", img:"carpita.webp", colores:["#c99a5b"]},
   {n:"Circo", p:30000, sz:"", d:"Tapa tipo carpa, cuerpo acanalado", img:"circo.webp", colores:[]}
 ];
 var LATAS = [
@@ -650,9 +653,11 @@ document.querySelectorAll(".cur").forEach(function(c){if(T.indexOf(c.parentNode)
 function show(e){e.classList.add("in");[].forEach.call(e.querySelectorAll(":scope>.cur"),function(c){c.classList.add("in");});
   if(STILL)return;if(e.classList.contains("stats"))setTimeout(function(){countUp(e);},350);
   var ph=e.classList.contains("step")&&e.querySelector(".ph");if(ph&&window.LUAAR)phaseIn(ph);}
-if(STILL||!("IntersectionObserver" in window))T.forEach(show);
-else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:.12,rootMargin:"0px 0px -40px 0px"});
-  T.forEach(function(e){io.observe(e);});}
+function whenFonts(cb){var done=false;function go(){if(done)return;done=true;DOC.classList.add("fonts");cb();}
+  try{Promise.all(['300 1em "Cormorant Garamond"','italic 300 1em "Cormorant Garamond"','300 1em Jost','400 1em Jost'].map(function(f){return document.fonts.load(f);})).then(go,go);}catch(e){go();}setTimeout(go,2500);}
+if(STILL||!("IntersectionObserver" in window)){DOC.classList.add("fonts");T.forEach(show);}
+else whenFonts(function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:.12,rootMargin:"0px 0px -40px 0px"});
+  T.forEach(function(e){io.observe(e);});});
 </script>
 </body>
 </html>
