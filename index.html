@@ -15,10 +15,8 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="LUAAR, luz de luna hecha vela: logo sobre una vela encendida">
 <meta name="twitter:image" content="https://plazalarajunior0-ops.github.io/luaar-web/img/og-luaar.jpg">
-<meta property="og:url" content="https://plazalarajunior0-ops.github.io/luaar-web/">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 54 54%22%3E%3Cpath d=%22M36 6a22 22 0 1 0 12 40A24 24 0 0 1 36 6z%22 fill=%22none%22 stroke=%22%23C5A469%22 stroke-width=%223%22/%3E%3C/svg%3E">
-<link rel="canonical" href="https://plazalarajunior0-ops.github.io/luaar-web/">
 <link rel="apple-touch-icon" href="img/icono-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="img/icono-192.png">
 <meta name="theme-color" content="#1E1C1B">
@@ -276,6 +274,51 @@ footer .kv .k{display:block;font-size:10px;letter-spacing:.24em;text-transform:u
 .hs-off .track .card{width:min(260px,70vw)}
 
 @media (min-width:1021px) and (max-height:760px){.hero h1{font-size:clamp(56px,5.6vw,84px)}.hero .hin{padding:118px 0 64px}.hero p:not(.cap){margin:20px 0 28px}}
+/* === pop-up de bienvenida (descuento en la primera compra) === */
+.pop{position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;padding:20px}
+.pop[hidden]{display:none}
+html.pop-open,html.pop-open body{overflow:hidden}
+.pop-bg{position:absolute;inset:0;background:rgba(20,17,15,.62);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;transition:opacity .5s var(--ease)}
+.pop-card{position:relative;display:grid;grid-template-columns:.9fr 1fr;width:min(860px,100%);max-height:calc(100vh - 40px);max-height:calc(100svh - 40px);overflow:auto;overscroll-behavior:contain;background:var(--luna);box-shadow:0 18px 40px rgba(0,0,0,.28);opacity:0;transform:translateY(26px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.pop-card:focus{outline:none}
+.pop.on .pop-bg{opacity:1}.pop.on .pop-card{opacity:1;transform:none}
+.pop-img{background:url(img/ambiente-noche.webp) 50% 45%/cover;min-height:100%}
+.pop-body{padding:48px 44px 40px}
+.pop h2{font-size:clamp(34px,4vw,48px);margin:14px 0}
+.pop h2:focus{outline:none}
+.pop-p{color:var(--humo);font-size:15px;margin-bottom:22px}
+.pop label{display:block;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--humo);margin-bottom:14px}
+.pop input:not([type=checkbox]){display:block;width:100%;margin-top:6px;padding:10px 0;border:0;border-bottom:1px solid var(--arena);border-radius:0;background:none;font:300 16px/1.4 var(--sans);color:var(--noche);letter-spacing:0;text-transform:none}
+.pop input:focus{outline:none;border-bottom-color:var(--brasa)}
+.pop input[aria-invalid]{border-bottom-color:#9C4A2F}
+.pop .chk{display:flex;gap:10px;align-items:flex-start;text-transform:none;letter-spacing:0;font-size:12.5px;line-height:1.5;margin:18px 0 4px}
+.pop .chk input{margin-top:3px;width:16px;height:16px;flex:none;accent-color:var(--brasa)}
+.pop .chk a{text-decoration:underline}
+.pop-err{min-height:20px;font-size:13px;color:#9C4A2F;margin:6px 0 10px}
+.pop-errwa{display:inline-block;margin:-4px 0 12px;font-size:13px;text-decoration:underline;color:var(--noche)}
+.pop-errwa[hidden]{display:none}
+.pop .btn{width:100%;justify-content:center;border:0;cursor:pointer;font-family:var(--sans)}
+.pop .btn[disabled]{opacity:.6;cursor:wait}
+.pop-small{font-size:11.5px;color:var(--humo);margin-top:12px;text-align:center}
+.pop-x{position:absolute;top:10px;right:12px;z-index:2;width:44px;height:44px;border:0;background:none;font:300 30px/1 var(--sans);color:var(--noche);cursor:pointer}
+.pop .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+#pop-paso2 .btn{margin-top:22px}
+@media (max-width:720px) and (max-height:760px){.pop-img{display:none}.pop .pop-x{color:var(--noche);background:none}}
+@media (max-width:720px) and (max-height:600px){.pop .cap{display:none}.pop h2{font-size:28px;margin:2px 0 8px}.pop-p{margin-bottom:10px}}
+@media (min-width:721px) and (max-height:760px){.pop-body{padding:30px 36px 26px}.pop h2{font-size:36px;margin:8px 0 10px}.pop-p{margin-bottom:14px}.pop label{margin-bottom:10px}.pop .chk{margin:12px 0 2px}}
+@media (max-width:720px){
+  .pop{padding:0;align-items:flex-end}
+  .pop-card{grid-template-columns:1fr;max-height:92vh;max-height:92svh;transform:translateY(40px)}
+  .pop-img{min-height:0;height:110px}
+  .pop-body{padding:24px 22px 22px}
+  .pop h2{font-size:32px;margin:10px 0}
+  .pop-p{font-size:14px;margin-bottom:14px}
+  .pop label{margin-bottom:8px}
+  .pop input:not([type=checkbox]){padding:8px 0}
+  .pop .chk{margin:12px 0 2px}
+  .pop-x{top:8px;right:8px;color:var(--luna);background:rgba(20,17,15,.4);border-radius:50%}
+}
+
 @media (max-width:1020px){
   .frame .tagc{left:-12px}
   header nav{display:none}
@@ -455,8 +498,40 @@ html.static *{animation:none!important;transition:none!important}html.static .rv
       <li><span class="k">Pagos</span>________</li>
       <li><span class="k">Horario</span>________</li></ul></div>
   </div>
-  <div class="bot"><span>© 2026 LUAAR · Barranquilla, Colombia</span><span>Cera vegetal · Producto colombiano · Libre de tóxicos</span></div>
+  <div class="bot"><span>© 2026 LUAAR · Barranquilla, Colombia · <a href="privacidad.html">Aviso de privacidad</a></span><span>Cera vegetal · Producto colombiano · Libre de tóxicos</span></div>
 </div></footer>
+
+<div class="pop" id="pop" data-descuento="10%" hidden>
+  <div class="pop-bg" data-close></div>
+  <div class="pop-card" role="dialog" aria-modal="true" aria-labelledby="pop-t" tabindex="-1">
+    <button class="pop-x" type="button" data-close aria-label="Cerrar">&times;</button>
+    <div class="pop-img" aria-hidden="true"></div>
+    <div class="pop-body">
+      <div id="pop-paso1">
+        <p class="cap gold">Bienvenida</p>
+        <h2 id="pop-t"><span data-desc>10%</span> en tu <em>primera&nbsp;vela</em>.</h2>
+        <p class="pop-p">Déjanos tus datos y te guardamos un <span data-desc>10%</span> de descuento para tu primera compra.</p>
+        <form id="pop-form" novalidate>
+          <label>Nombre<input name="nombre" autocomplete="given-name" maxlength="80" required></label>
+          <label>Correo<input name="correo" type="email" inputmode="email" autocomplete="email" maxlength="120" required></label>
+          <label>WhatsApp<input name="numero" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="Tu número" required></label>
+          <input class="hp" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label class="chk"><input type="checkbox" name="acepto" required><span>Acepto el <a href="privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> y autorizo a LUAAR a usar mis datos para guardarme el descuento, atender mi pedido y enviarme novedades.</span></label>
+          <p class="pop-err" id="pop-err" role="alert"></p>
+          <a class="pop-errwa" id="pop-errwa" href="#" hidden>Escribir por WhatsApp</a>
+          <button class="btn btn-dk" type="submit"><span>Quiero mi descuento</span></button>
+          <p class="pop-small">Válido una vez por persona, en tu primera compra.</p>
+        </form>
+      </div>
+      <div id="pop-paso2" hidden>
+        <p class="cap gold">Bienvenida</p>
+        <h2 id="pop-t2" tabindex="-1"></h2>
+        <p class="pop-p" id="pop-p2"></p>
+        <a class="btn btn-wa" id="pop-wa2" href="#"><i class="ico"></i><span></span></a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <a class="fab" id="fab" href="#" data-wa="Hola LUAAR, quiero pedir una vela." aria-label="Escribir por WhatsApp"><i class="ico"></i></a>
 <a class="moon" id="moon" href="#top" aria-label="Volver arriba"></a>
@@ -467,6 +542,9 @@ html.static *{animation:none!important;transition:none!important}html.static .rv
 /* === Datos que se cambian aquí === */
 var WHATSAPP = "573007652947";          // número con indicativo, sin + ni espacios
 var INSTAGRAM = "https://www.instagram.com/luaar__ilumina/", TIKTOK = "#";      // enlaces a los perfiles
+var REGISTRO_CLAVE = "";          // clave de Web3Forms: cada registro del pop-up llega como correo a LUAAR. Vacía = no conectado y el pop-up lo dice
+var REGISTRO_ESPERA_MS = 12000;   // tiempo máximo esperando el envío antes de decir que no se pudo
+var BIENVENIDA = {segundos: 12, scroll: .45};   // el pop-up sale a los 12 s o al bajar el 45 % de la página, una vez por persona
 
 var VELAS = [
   {n:"Crystal", p:130000, sz:"Grande", d:"Tallado en diamante", img:"crystal.webp", colores:["#8f8c88","#c99a5b","#e8e4dc"], big:true},
@@ -659,5 +737,6 @@ if(STILL||!("IntersectionObserver" in window)){DOC.classList.add("fonts");T.forE
 else whenFonts(function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:.12,rootMargin:"0px 0px -40px 0px"});
   T.forEach(function(e){io.observe(e);});});
 </script>
+<script src="bienvenida.js"></script>
 </body>
 </html>
