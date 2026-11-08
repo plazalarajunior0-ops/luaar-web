@@ -270,6 +270,12 @@ footer .kv .k{display:block;font-size:10px;letter-spacing:.24em;text-transform:u
 .hs-ui .cap{font-size:10.5px;white-space:nowrap}
 .hs-bar{flex:1;height:1px;background:var(--arena);position:relative;overflow:hidden}
 .hs-bar i{position:absolute;inset:0;background:var(--brasa);transform-origin:0 50%;transform:scaleX(0)}
+.hs-arr{position:absolute;z-index:4;top:var(--at,45%);width:52px;height:52px;margin-top:-26px;padding:0;border:0;border-radius:50%;background:var(--luna);color:var(--tinta);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 22px rgba(30,28,27,.24);transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.hs-arr svg{width:20px;height:20px}
+.hs-arr.prev{left:max(16px,calc((100vw - 1280px)/2 - 26px))}.hs-arr.next{right:max(16px,calc((100vw - 1280px)/2 - 26px))}
+.hs-arr:hover{transform:scale(1.07)}.hs-arr:focus-visible{outline:2px solid var(--dorado);outline-offset:3px}
+.hs-arr[disabled]{opacity:0;pointer-events:none}
+.still .hs-arr,.hs-off .hs-arr{display:none}
 .js .fam li{opacity:0;translate:-14px 0;transition:opacity .9s var(--ease),translate .9s var(--ease),padding .4s var(--ease),color .3s;transition-delay:calc(var(--i,0)*70ms + .25s),calc(var(--i,0)*70ms + .25s),0s,0s}
 .fam.in li{opacity:1;translate:0 0}
 .still .hs,.hs-off .hs{height:auto!important}.still .hs-in,.hs-off .hs-in{position:static;height:auto;overflow-x:auto;padding:0 0 10px}.still .track,.hs-off .track{transform:none!important}.still .hs-ui,.hs-off .hs-ui{display:none}
@@ -370,6 +376,7 @@ html.pop-open,html.pop-open body{overflow:hidden}
   .has-moon .hero .seal{display:none}
   .track .card{width:min(74vw,calc((100vh - 300px)*.8));width:min(74vw,calc((100svh - 300px)*.8))}
   .hs-hint{display:none}
+  .hs-arr{width:46px;height:46px;margin-top:-23px}.hs-arr.prev{left:10px}.hs-arr.next{right:10px}
 }
 html.static *{animation:none!important;transition:none!important}html.static .rv{opacity:1;transform:none}html.static .hero{min-height:860px!important}@media (max-width:640px){html.static .hero{min-height:780px!important}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
@@ -421,6 +428,8 @@ html.static *{animation:none!important;transition:none!important}html.static .rv
 </div>
   <div class="hs" id="hs"><div class="hs-in">
     <div class="track" id="grid"></div>
+    <button class="hs-arr prev" id="hs-prev" type="button" aria-label="Ver la vela anterior" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="hs-arr next" id="hs-next" type="button" aria-label="Ver la siguiente vela"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
     <div class="hs-ui wrap"><span class="cap" id="hs-n">01 / 06</span><span class="hs-bar"><i id="hs-bar"></i></span><span class="cap hs-hint">Sigue bajando</span></div>
   </div></div>
   <div class="wrap">
@@ -696,7 +705,14 @@ function hsLayout(){var box=document.getElementById("hs"),track=document.getElem
   track.style.padding=innerWidth<=640&&track.children.length?"0 "+Math.round((innerWidth-track.children[0].offsetWidth)/2)+"px":"";   /* celular: cada vela queda centrada */
   var dist=Math.max(0,track.offsetWidth-innerWidth),kids=track.children;box.style.height=(box.firstElementChild.offsetHeight+dist)+"px";
   HS={box:box,track:track,dist:dist,n:kids.length,num:document.getElementById("hs-n"),bar:document.getElementById("hs-bar"),
-    c0:kids.length?kids[0].offsetLeft+kids[0].offsetWidth/2:0,step:kids.length>1?kids[1].offsetLeft-kids[0].offsetLeft:0,cards:TL.slice(0,kids.length)};}
+    c0:kids.length?kids[0].offsetLeft+kids[0].offsetWidth/2:0,step:kids.length>1?kids[1].offsetLeft-kids[0].offsetLeft:0,cards:TL.slice(0,kids.length),
+    prev:document.getElementById("hs-prev"),next:document.getElementById("hs-next"),cur:0};
+  var im=kids.length?kids[0].querySelector(".img"):null,pin=box.firstElementChild;   /* flechas a la altura del centro de la foto */
+  if(im)pin.style.setProperty("--at",Math.round(im.getBoundingClientRect().top-pin.getBoundingClientRect().top+im.offsetHeight/2)+"px");}
+function hsGo(d){if(!HS||HS.n<2)return;var r=HS.box.getBoundingClientRect(),run=r.height-innerHeight;if(run<=0)return;
+  var i=Math.round(Math.min(1,Math.max(0,-r.top/run))*(HS.n-1)),j=Math.max(0,Math.min(HS.n-1,i+d)),t=Math.round(window.scrollY+r.top+run*j/(HS.n-1));
+  if(lenis)lenis.scrollTo(t,{duration:1.1});else window.scrollTo({top:t,behavior:"smooth"});}
+[["hs-prev",-1],["hs-next",1]].forEach(function(a){var b=document.getElementById(a[0]);if(b)b.addEventListener("click",function(){hsGo(a[1]);});});
 function scrollFX(){var y=window.scrollY,H=innerHeight;
   if(y!==lastSY){lastSY=y;
     heroEl.style.setProperty("--hp",Math.min(1,Math.max(0,y/H)).toFixed(4));
@@ -706,6 +722,7 @@ function scrollFX(){var y=window.scrollY,H=innerHeight;
     if(HS){var r=HS.box.getBoundingClientRect(),run=r.height-H,p=run>0?Math.min(1,Math.max(0,-r.top/run)):0,x=-p*HS.dist;
       HS.track.style.transform="translate3d("+x.toFixed(1)+"px,0,0)";HS.bar.style.transform="scaleX("+p.toFixed(4)+")";
       var nn=Math.min(HS.n,Math.round(p*(HS.n-1))+1);HS.num.textContent=("0"+nn).slice(-2)+" / "+("0"+HS.n).slice(-2);
+      if(nn!==HS.cur){HS.cur=nn;if(HS.prev)HS.prev.disabled=nn<=1;if(HS.next)HS.next.disabled=nn>=HS.n;}
       HS.cards.forEach(function(c,i){var cx=HS.c0+i*HS.step+x,k=Math.max(-1,Math.min(1,(cx-innerWidth/2)/(innerWidth/2)));c.ry=-k*16;});}}
   TL.forEach(function(o){o.cx+=(o.tx-o.cx)*.12;o.cy+=(o.ty-o.cy)*.12;
     var k="perspective(1100px) rotateY("+(o.ry+o.cy).toFixed(2)+"deg) rotateX("+o.cx.toFixed(2)+"deg)";if(k!==o.k){o.k=k;o.el.style.transform=k;}});}
